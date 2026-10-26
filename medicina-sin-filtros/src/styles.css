@@ -18,19 +18,39 @@
   color: #303030;
   background: #fff;
   color-scheme: light;
-  --brand-red: #B70F1E;
+  --brand-red: #b70f1e;
   --brand-red-hover: #960c18;
   --surface-muted: #f3f4f6;
   --text-main: #303030;
 }
 
-*, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body { margin: 0; min-width: 320px; font-family: "Inter", sans-serif; }
-a { text-decoration: none; }
-button { font-family: inherit; }
-a, button { -webkit-tap-highlight-color: transparent; }
-:focus-visible { outline: 3px solid var(--brand-red); outline-offset: 3px; }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  min-width: 320px;
+  font-family: "Inter", sans-serif;
+}
+a {
+  text-decoration: none;
+}
+button {
+  font-family: inherit;
+}
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+:focus-visible {
+  outline: 3px solid var(--brand-red);
+  outline-offset: 3px;
+}
 
 /* 02. NAVBAR DE ESCRITORIO ---------------------------------- */
 .nav-shell {
@@ -67,9 +87,12 @@ a, button { -webkit-tap-highlight-color: transparent; }
   box-shadow: none;
   font-size: 14px;
   font-weight: 600;
-  letter-spacing: -.02em;
+  letter-spacing: -0.02em;
   white-space: nowrap;
-  transition: background-color .2s ease, color .2s ease, transform .2s ease;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .nav-pill:first-child {
@@ -78,8 +101,14 @@ a, button { -webkit-tap-highlight-color: transparent; }
   color: #fff;
 }
 
-.mobile-brand, .mobile-trigger { display: none; }
-.drawer-overlay, .mobile-drawer { display: none; }
+.mobile-brand,
+.mobile-trigger {
+  display: none;
+}
+.drawer-overlay,
+.mobile-drawer {
+  display: none;
+}
 
 /* 03. HERO -------------------------------------------------- */
 .hero {
@@ -93,7 +122,9 @@ a, button { -webkit-tap-highlight-color: transparent; }
   padding: 30px 38px 90px;
 }
 
-.hero-copy { min-width: 0; }
+.hero-copy {
+  min-width: 0;
+}
 .eyebrow {
   display: inline-flex;
   align-items: center;
@@ -116,7 +147,7 @@ a, button { -webkit-tap-highlight-color: transparent; }
   font-family: "Poppins", sans-serif;
   font-size: clamp(65px, 8vw, 126px);
   font-weight: 800;
-  letter-spacing: -.055em;
+  letter-spacing: -0.055em;
   line-height: 1.08;
   white-space: nowrap;
 }
@@ -125,7 +156,7 @@ a, button { -webkit-tap-highlight-color: transparent; }
   margin: 0;
   font-size: clamp(14px, 1.5vw, 18px);
   font-weight: 400;
-  letter-spacing: -.01em;
+  letter-spacing: -0.01em;
   line-height: 1.6;
 }
 .hero-art {
@@ -140,7 +171,12 @@ a, button { -webkit-tap-highlight-color: transparent; }
 }
 
 /* 04. CORAZÓN Y ELECTROCARDIOGRAMA -------------------------- */
-.heart-svg { display: block; width: 80%; height: 82%; overflow: visible; }
+.heart-svg {
+  display: block;
+  width: 80%;
+  height: 82%;
+  overflow: visible;
+}
 .heart-beat {
   transform-origin: 50% 50%;
   transform-box: view-box;
@@ -148,9 +184,19 @@ a, button { -webkit-tap-highlight-color: transparent; }
   will-change: transform;
 }
 @keyframes heartbeat {
-  0%, 22%, 46%, 90%, 100% { transform: scale(1); }
-  12% { transform: scale(1.08); }
-  34% { transform: scale(1.045); }
+  0%,
+  22%,
+  46%,
+  90%,
+  100% {
+    transform: scale(1);
+  }
+  12% {
+    transform: scale(1.08);
+  }
+  34% {
+    transform: scale(1.045);
+  }
 }
 .ecg-line {
   stroke-dasharray: 420;
@@ -158,10 +204,22 @@ a, button { -webkit-tap-highlight-color: transparent; }
   animation: ecgPulse 1.7s linear infinite;
 }
 @keyframes ecgPulse {
-  0% { stroke-dashoffset: 420; opacity: .4; }
-  15% { opacity: 1; }
-  70%, 85% { stroke-dashoffset: 0; opacity: 1; }
-  100% { stroke-dashoffset: -420; opacity: .4; }
+  0% {
+    stroke-dashoffset: 420;
+    opacity: 0.4;
+  }
+  15% {
+    opacity: 1;
+  }
+  70%,
+  85% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: -420;
+    opacity: 0.4;
+  }
 }
 
 /* 05. SECCIÓN CURSOS ---------------------------------------- */
@@ -230,7 +288,7 @@ a, button { -webkit-tap-highlight-color: transparent; }
   font-size: clamp(32px, 4.2vw, 58px);
   font-weight: 800;
   line-height: 1.15;
-  letter-spacing: -.045em;
+  letter-spacing: -0.045em;
 }
 .courses-description {
   max-width: 520px;
@@ -253,16 +311,27 @@ a, button { -webkit-tap-highlight-color: transparent; }
   border: 1px solid #555;
   border-radius: 18px;
   background: #383838;
-  transition: transform .2s ease, border-color .2s ease;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
 }
-.benefit-icon { margin-bottom: 18px; color: #f05260; font-size: 28px; }
+.benefit-icon {
+  margin-bottom: 18px;
+  color: #f05260;
+  font-size: 28px;
+}
 .benefit-card h3 {
   margin: 0 0 12px;
   font-family: "Poppins", sans-serif;
   font-size: 18px;
   font-weight: 700;
 }
-.benefit-card p { margin: 0; color: #d1d5db; font-size: 14px; line-height: 1.7; }
+.benefit-card p {
+  margin: 0;
+  color: #d1d5db;
+  font-size: 14px;
+  line-height: 1.7;
+}
 
 /* 07. CORAZÓN VIAJERO Y GORRO ------------------------------- */
 /* FlyingHeart.jsx coloca left/top en el centro de cada recuadro.
@@ -275,19 +344,34 @@ a, button { -webkit-tap-highlight-color: transparent; }
   transform: translate3d(-50%, -50%, 0);
   will-change: transform;
 }
-.flying-heart .heart-svg { display: block; width: 100%; height: 100%; }
+.flying-heart .heart-svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
 .graduation-cap {
   transform-origin: 160px 80px;
   transform-box: view-box;
-  animation: capAppear .5s ease-out both;
+  animation: capAppear 0.5s ease-out both;
 }
 @keyframes capAppear {
-  from { opacity: 0; transform: translateY(-15px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* 08. BOTÓN PARA CAMBIAR TEMA ------------------------------- */
-.theme-control { position: absolute; top: 27px; right: 32px; z-index: 21; }
+.theme-control {
+  position: absolute;
+  top: 27px;
+  right: 32px;
+  z-index: 21;
+}
 .theme-toggle {
   display: grid;
   place-items: center;
@@ -299,45 +383,92 @@ a, button { -webkit-tap-highlight-color: transparent; }
   color: #303030;
   font-size: 20px;
   cursor: pointer;
-  transition: background-color .2s ease, color .2s ease;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
 }
 
 /* 09. DARK MODE --------------------------------------------- */
-html.dark { color-scheme: dark; background: #0f172a; }
-html.dark body { background: #0f172a; color: #f8fafc; }
-html.dark .nav-shell { background: #0f172a; }
-html.dark .desktop-nav { background: #1e293b; border-color: #334155; }
-html.dark .nav-pill:not(:first-child) { color: #e2e8f0; }
-html.dark .hero { color: #f8fafc; }
-html.dark .hero-art { border-color: #94a3b8; }
-html.dark .mobile-brand { color: #f8fafc; }
+html.dark {
+  color-scheme: dark;
+  background: #0f172a;
+}
+html.dark body {
+  background: #0f172a;
+  color: #f8fafc;
+}
+html.dark .nav-shell {
+  background: #0f172a;
+}
+html.dark .desktop-nav {
+  background: #1e293b;
+  border-color: #334155;
+}
+html.dark .nav-pill:not(:first-child) {
+  color: #e2e8f0;
+}
+html.dark .hero {
+  color: #f8fafc;
+}
+html.dark .hero-art {
+  border-color: #94a3b8;
+}
+html.dark .mobile-brand {
+  color: #f8fafc;
+}
 html.dark .theme-toggle {
   background: #1e293b;
   border-color: #334155;
   color: #f8fafc;
 }
-html.dark .mobile-drawer { background: #172033; color: #f8fafc; }
+html.dark .mobile-drawer {
+  background: #172033;
+  color: #f8fafc;
+}
 html.dark .mobile-drawer nav a:not(:first-child),
-html.dark .drawer-head button { background: #263449; color: #f8fafc; }
-html.dark .courses-section { background: #111827; }
-html.dark .benefit-card { background: #1e293b; border-color: #334155; }
+html.dark .drawer-head button {
+  background: #263449;
+  color: #f8fafc;
+}
+html.dark .courses-section {
+  background: #111827;
+}
+html.dark .benefit-card {
+  background: #1e293b;
+  border-color: #334155;
+}
 
 /* 10. HOVER EXCLUSIVO PARA MOUSE ---------------------------- */
 @media (hover: hover) and (pointer: fine) {
-  .nav-pill:hover { background: #e5e7eb; color: #111827; }
+  .nav-pill:hover {
+    background: #e5e7eb;
+    color: #111827;
+  }
   .nav-pill:first-child:hover {
     background: var(--brand-red-hover);
     color: #fff;
     transform: translateY(-1px);
   }
-  .benefit-card:hover { transform: translateY(-5px); border-color: var(--brand-red); }
-  html.dark .nav-pill:not(:first-child):hover { background: #334155; color: #fff; }
+  .benefit-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--brand-red);
+  }
+  html.dark .nav-pill:not(:first-child):hover {
+    background: #334155;
+    color: #fff;
+  }
 }
 
 /* 11. TABLET Y CELULAR (hasta 1023px) ----------------------- */
 @media (max-width: 1023px) {
-  .nav-shell { height: 76px; padding: 0 20px; justify-content: space-between; }
-  .desktop-nav { display: none; }
+  .nav-shell {
+    height: 76px;
+    padding: 0 20px;
+    justify-content: space-between;
+  }
+  .desktop-nav {
+    display: none;
+  }
   .mobile-brand {
     display: block;
     color: #303030;
@@ -345,7 +476,9 @@ html.dark .benefit-card { background: #1e293b; border-color: #334155; }
     font-size: 19px;
     font-weight: 700;
   }
-  .mobile-brand span { color: var(--brand-red); }
+  .mobile-brand span {
+    color: var(--brand-red);
+  }
   .mobile-trigger {
     display: grid;
     place-items: center;
@@ -367,8 +500,13 @@ html.dark .benefit-card { background: #1e293b; border-color: #334155; }
     min-height: unset;
     padding: 45px 24px 76px;
   }
-  .hero h1 { font-size: clamp(48px, 11vw, 86px); }
-  .hero p { max-width: 530px; font-size: 14px; }
+  .hero h1 {
+    font-size: clamp(48px, 11vw, 86px);
+  }
+  .hero p {
+    max-width: 530px;
+    font-size: 14px;
+  }
   .hero-art {
     justify-self: center;
     width: min(100%, 440px);
@@ -384,9 +522,14 @@ html.dark .benefit-card { background: #1e293b; border-color: #334155; }
     background: rgb(0 0 0 / 60%);
     opacity: 0;
     visibility: hidden;
-    transition: opacity .25s ease, visibility .25s ease;
+    transition:
+      opacity 0.25s ease,
+      visibility 0.25s ease;
   }
-  .drawer-overlay.visible { opacity: 1; visibility: visible; }
+  .drawer-overlay.visible {
+    opacity: 1;
+    visibility: visible;
+  }
 
   /* Panel lateral */
   .mobile-drawer {
@@ -401,9 +544,11 @@ html.dark .benefit-card { background: #1e293b; border-color: #334155; }
     background: #fff;
     box-shadow: 10px 0 35px rgb(0 0 0 / 12%);
     transform: translate3d(-102%, 0, 0);
-    transition: transform .3s ease;
+    transition: transform 0.3s ease;
   }
-  .mobile-drawer.opened { transform: translate3d(0, 0, 0); }
+  .mobile-drawer.opened {
+    transform: translate3d(0, 0, 0);
+  }
   .drawer-head {
     display: flex;
     align-items: center;
@@ -424,7 +569,11 @@ html.dark .benefit-card { background: #1e293b; border-color: #334155; }
     color: #303030;
     cursor: pointer;
   }
-  .mobile-drawer nav { display: flex; flex-direction: column; gap: 12px; }
+  .mobile-drawer nav {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
   .mobile-drawer nav a {
     display: flex;
     align-items: center;
@@ -436,43 +585,96 @@ html.dark .benefit-card { background: #1e293b; border-color: #334155; }
     font-size: 14px;
     font-weight: 600;
   }
-  .mobile-drawer nav a:first-child { background: var(--brand-red); color: #fff; }
+  .mobile-drawer nav a:first-child {
+    background: var(--brand-red);
+    color: #fff;
+  }
 
-  .theme-control { top: 16px; right: 82px; }
-  .courses-container { grid-template-columns: 1fr; gap: 42px; }
-  .courses-visual { width: 100%; max-width: 500px; min-height: 320px; margin: 0 auto; }
-  .courses-heart-target { width: 210px; height: 210px; }
-  .courses-benefits { grid-template-columns: 1fr; max-width: 600px; }
+  .theme-control {
+    top: 16px;
+    right: 82px;
+  }
+  .courses-container {
+    grid-template-columns: 1fr;
+    gap: 42px;
+  }
+  .courses-visual {
+    width: 100%;
+    max-width: 500px;
+    min-height: 320px;
+    margin: 0 auto;
+  }
+  .courses-heart-target {
+    width: 210px;
+    height: 210px;
+  }
+  .courses-benefits {
+    grid-template-columns: 1fr;
+    max-width: 600px;
+  }
 }
 
 /* 12. CELULAR (hasta 640px) --------------------------------- */
 @media (max-width: 640px) {
-  .courses-section { padding: 70px 22px; }
-  .courses-content h2 { font-size: clamp(30px, 8vw, 42px); }
-  .courses-description { font-size: 15px; line-height: 1.75; }
-  .courses-visual { min-height: 280px; border-radius: 26px; }
-  .courses-heart-target { width: 175px; height: 175px; }
-  .courses-visual-label { bottom: 20px; font-size: 10px; }
-  .courses-benefits { margin-top: 45px; }
-  .benefit-card { padding: 24px; }
+  .courses-section {
+    padding: 70px 22px;
+  }
+  .courses-content h2 {
+    font-size: clamp(30px, 8vw, 42px);
+  }
+  .courses-description {
+    font-size: 15px;
+    line-height: 1.75;
+  }
+  .courses-visual {
+    min-height: 280px;
+    border-radius: 26px;
+  }
+  .courses-heart-target {
+    width: 175px;
+    height: 175px;
+  }
+  .courses-visual-label {
+    bottom: 20px;
+    font-size: 10px;
+  }
+  .courses-benefits {
+    margin-top: 45px;
+  }
+  .benefit-card {
+    padding: 24px;
+  }
 }
 
 /* 13. CELULARES PEQUEÑOS ------------------------------------ */
 @media (max-width: 380px) {
-  .hero h1 { font-size: 12vw; }
-  .mobile-brand { font-size: 16px; }
+  .hero h1 {
+    font-size: 12vw;
+  }
+  .mobile-brand {
+    font-size: 16px;
+  }
 }
 
 /* 14. ACCESIBILIDAD Y MOVIMIENTO REDUCIDO ------------------- */
-@keyframes softpulse { 50% { transform: scale(1.055); } }
+@keyframes softpulse {
+  50% {
+    transform: scale(1.055);
+  }
+}
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+  *,
+  *::before,
+  *::after {
     animation: none !important;
     transition: none !important;
   }
-  .ecg-line { stroke-dasharray: none; stroke-dashoffset: 0; opacity: 1; }
+  .ecg-line {
+    stroke-dasharray: none;
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
 }
-
 
 /* ==========================================================
    FASE 3 — ¿POR QUÉ ELEGIRNOS?
@@ -517,7 +719,9 @@ html.dark .benefit-card { background: #1e293b; border-color: #334155; }
   line-height: 1.15;
 }
 
-.why-header h2 span { color: #b70f1e; }
+.why-header h2 span {
+  color: #b70f1e;
+}
 
 .why-header > p {
   max-width: 630px;
@@ -540,7 +744,9 @@ html.dark .benefit-card { background: #1e293b; border-color: #334155; }
   border: 1px solid #e5e7eb;
   border-radius: 20px;
   background: #f8f9fb;
-  transition: border-color 200ms ease, transform 200ms ease;
+  transition:
+    border-color 200ms ease,
+    transform 200ms ease;
 }
 
 .why-benefit-number {
@@ -682,33 +888,61 @@ html.dark .why-testimonials-note {
 
 /* 7. TABLETS ----------------------------------------------- */
 @media (max-width: 1023px) {
-  .why-section { padding: 80px 24px; }
-  .why-benefits { grid-template-columns: 1fr; }
-  .why-benefit { padding: 26px; }
-  .why-benefit-number { margin-bottom: 14px; }
-  .why-testimonials { padding: 36px; }
+  .why-section {
+    padding: 80px 24px;
+  }
+  .why-benefits {
+    grid-template-columns: 1fr;
+  }
+  .why-benefit {
+    padding: 26px;
+  }
+  .why-benefit-number {
+    margin-bottom: 14px;
+  }
+  .why-testimonials {
+    padding: 36px;
+  }
 }
 
 /* 8. CELULARES --------------------------------------------- */
 @media (max-width: 640px) {
-  .why-section { padding: 70px 22px; }
-  .why-header { margin-bottom: 30px; }
-  .why-header > p { font-size: 15px; }
-  .why-benefits { gap: 14px; }
-  .why-benefit { padding: 24px; }
+  .why-section {
+    padding: 70px 22px;
+  }
+  .why-header {
+    margin-bottom: 30px;
+  }
+  .why-header > p {
+    font-size: 15px;
+  }
+  .why-benefits {
+    gap: 14px;
+  }
+  .why-benefit {
+    padding: 24px;
+  }
   .why-testimonials {
     grid-template-columns: 1fr;
     gap: 18px;
     margin-top: 20px;
     padding: 28px 24px;
   }
-  .why-testimonials-art { min-height: 185px; }
-  .why-chat { width: 88px; height: 72px; font-size: 34px; }
+  .why-testimonials-art {
+    min-height: 185px;
+  }
+  .why-chat {
+    width: 88px;
+    height: 72px;
+    font-size: 34px;
+  }
 }
 
 /* 9. ACCESIBILIDAD ----------------------------------------- */
 @media (prefers-reduced-motion: reduce) {
-  .why-benefit { transition: none; }
+  .why-benefit {
+    transition: none;
+  }
 }
 /* ============================================================
    FASE 3 — CORAZONES QUE REAPARECEN EN CADA BENEFICIO
@@ -734,7 +968,7 @@ html.dark .why-testimonials-note {
   width: clamp(70px, 8vw, 105px);
   height: clamp(70px, 8vw, 105px);
   opacity: 0;
-  transform: translateY(-40px) scale(.6);
+  transform: translateY(-40px) scale(0.6);
 }
 
 .why-benefit-heart .heart-svg {
@@ -745,36 +979,69 @@ html.dark .why-testimonials-note {
 
 /* Al entrar en pantalla, cada corazón salta y se queda latiendo. */
 .why-benefit.is-visible .why-benefit-heart {
-  animation: whyHeartJump 850ms cubic-bezier(.2,.8,.2,1) both;
+  animation: whyHeartJump 850ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
 }
 
 /* Entrada escalonada en escritorio. */
-.why-benefit:nth-child(2).is-visible .why-benefit-heart { animation-delay: 160ms; }
-.why-benefit:nth-child(3).is-visible .why-benefit-heart { animation-delay: 320ms; }
+.why-benefit:nth-child(2).is-visible .why-benefit-heart {
+  animation-delay: 160ms;
+}
+.why-benefit:nth-child(3).is-visible .why-benefit-heart {
+  animation-delay: 320ms;
+}
 
 @keyframes whyHeartJump {
-  0%   { opacity: 0; transform: translateY(-40px) scale(.6); }
-  55%  { opacity: 1; transform: translateY(10px) scale(1.08); }
-  75%  { opacity: 1; transform: translateY(-8px) scale(.96); }
-  100% { opacity: 1; transform: translateY(0) scale(1); }
+  0% {
+    opacity: 0;
+    transform: translateY(-40px) scale(0.6);
+  }
+  55% {
+    opacity: 1;
+    transform: translateY(10px) scale(1.08);
+  }
+  75% {
+    opacity: 1;
+    transform: translateY(-8px) scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 @media (max-width: 1023px) {
-  .why-benefit-top { min-height: 76px; }
-  .why-benefit-heart { width: 82px; height: 82px; }
+  .why-benefit-top {
+    min-height: 76px;
+  }
+  .why-benefit-heart {
+    width: 82px;
+    height: 82px;
+  }
 }
 
 @media (max-width: 640px) {
-  .why-benefit-top { min-height: 70px; }
-  .why-benefit-heart { width: 75px; height: 75px; }
+  .why-benefit-top {
+    min-height: 70px;
+  }
+  .why-benefit-heart {
+    width: 75px;
+    height: 75px;
+  }
   /* En móvil cada tarjeta se revela al llegar a pantalla, sin retrasos. */
   .why-benefit:nth-child(2).is-visible .why-benefit-heart,
-  .why-benefit:nth-child(3).is-visible .why-benefit-heart { animation-delay: 0ms; }
+  .why-benefit:nth-child(3).is-visible .why-benefit-heart {
+    animation-delay: 0ms;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .why-benefit-heart { opacity: 1; transform: none; }
-  .why-benefit.is-visible .why-benefit-heart { animation: none; }
+  .why-benefit-heart {
+    opacity: 1;
+    transform: none;
+  }
+  .why-benefit.is-visible .why-benefit-heart {
+    animation: none;
+  }
 }
 
 /* ==========================================
@@ -808,8 +1075,7 @@ html.dark .why-testimonials-note {
   background: rgba(20, 20, 20, 0.92);
   border-color: rgba(255, 255, 255, 0.15);
 
-  box-shadow:
-    0 12px 35px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
 
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
@@ -824,7 +1090,7 @@ html.dark .why-testimonials-note {
 
 /* Botón principal */
 .nav-shell.nav-scrolled .nav-pill:first-child {
-  background: #B70F1E;
+  background: #b70f1e;
   color: #ffffff;
 }
 
@@ -871,59 +1137,462 @@ html.dark .nav-shell.nav-scrolled .desktop-nav {
    Reemplaza los estilos anteriores de la galería (si existen).
    No modifica el navbar, el corazón ni otras secciones.
    ========================================================== */
-.class-gallery { padding: 96px 24px 100px; background: #f8f9fb; color: #303030; overflow: hidden; }
-.class-gallery__container { max-width: 1180px; margin: 0 auto; }
-.class-gallery__header { max-width: 760px; margin-bottom: 34px; }
-.class-gallery__eyebrow { display: block; margin-bottom: 15px; color: #B70F1E; font-size: 12px; font-weight: 700; letter-spacing: 1.6px; }
-.class-gallery__header h2 { margin: 0 0 16px; font-family: "Poppins", sans-serif; font-size: clamp(32px, 5vw, 60px); font-weight: 800; letter-spacing: -.045em; line-height: 1.15; }
-.class-gallery__header h2 span { color: #B70F1E; }
-.class-gallery__header p { margin: 0; font-size: 16px; line-height: 1.75; color: #5a6472; }
+.class-gallery {
+  padding: 96px 24px 100px;
+  background: #f8f9fb;
+  color: #303030;
+  overflow: hidden;
+}
+.class-gallery__container {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+.class-gallery__header {
+  max-width: 760px;
+  margin-bottom: 34px;
+}
+.class-gallery__eyebrow {
+  display: block;
+  margin-bottom: 15px;
+  color: #b70f1e;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+}
+.class-gallery__header h2 {
+  margin: 0 0 16px;
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(32px, 5vw, 60px);
+  font-weight: 800;
+  letter-spacing: -0.045em;
+  line-height: 1.15;
+}
+.class-gallery__header h2 span {
+  color: #b70f1e;
+}
+.class-gallery__header p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.75;
+  color: #5a6472;
+}
 
 /* Escenario con imagen central a color y laterales en blanco y negro. */
-.class-carousel { position: relative; }
-.class-carousel__stage { position: relative; height: clamp(290px, 43vw, 500px); perspective: 1000px; }
+.class-carousel {
+  position: relative;
+}
+.class-carousel__stage {
+  position: relative;
+  height: clamp(290px, 43vw, 500px);
+  perspective: 1000px;
+}
 .class-carousel__slide {
-  position: absolute; top: 50%; left: 50%; width: min(68%, 760px); height: 88%; margin: 0;
-  border-radius: 24px; overflow: hidden; background: #e5e7eb;
-  transform: translate(calc(-50% + var(--offset) * 67%), -50%) scale(.82);
-  opacity: .55; filter: grayscale(1); z-index: 1; pointer-events: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: min(68%, 760px);
+  height: 88%;
+  margin: 0;
+  border-radius: 24px;
+  overflow: hidden;
+  background: #e5e7eb;
+  transform: translate(calc(-50% + var(--offset) * 67%), -50%) scale(0.82);
+  opacity: 0.55;
+  filter: grayscale(1);
+  z-index: 1;
+  pointer-events: none;
   box-shadow: 0 12px 35px rgb(0 0 0 / 12%);
-  transition: transform .65s cubic-bezier(.22,1,.36,1), opacity .65s ease, filter .65s ease, box-shadow .65s ease;
+  transition:
+    transform 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.65s ease,
+    filter 0.65s ease,
+    box-shadow 0.65s ease;
 }
 .class-carousel__slide.is-active {
-  transform: translate(-50%, -50%) scale(1); opacity: 1; filter: grayscale(0); z-index: 3;
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  filter: grayscale(0);
+  z-index: 3;
   box-shadow: 0 24px 55px rgb(0 0 0 / 22%);
 }
-.class-carousel__slide img { display: block; width: 100%; height: 100%; object-fit: contain; background: #171717; }
-.class-carousel__slide figcaption {
-  position: absolute; left: 18px; bottom: 18px; padding: 10px 14px;
-  border-radius: 10px; background: rgb(0 0 0 / 76%); color: #fff;
-  font-size: 13px; font-weight: 700;
+.class-carousel__slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #171717;
 }
-.class-carousel__controls { display: flex; align-items: center; justify-content: center; gap: 24px; margin-top: 20px; }
-.class-carousel__arrow { width: 44px; height: 44px; border: 1px solid #d1d5db; border-radius: 50%; background: #fff; color: #303030; font-size: 29px; line-height: 1; cursor: pointer; }
-.class-carousel__dots { display: flex; align-items: center; gap: 10px; }
-.class-carousel__dot { width: 10px; height: 10px; padding: 0; border: 0; border-radius: 50%; background: #aeb4bd; cursor: pointer; transition: width .25s ease, background .25s ease; }
-.class-carousel__dot.is-active { width: 28px; border-radius: 8px; background: #B70F1E; }
-.class-carousel__counter { margin: 10px 0 0; color: #6b7280; font-size: 12px; text-align: center; }
-.class-carousel__arrow:focus-visible, .class-carousel__dot:focus-visible { outline: 3px solid #B70F1E; outline-offset: 4px; }
+.class-carousel__slide figcaption {
+  position: absolute;
+  left: 18px;
+  bottom: 18px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: rgb(0 0 0 / 76%);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+}
+.class-carousel__controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 20px;
+}
+.class-carousel__arrow {
+  width: 44px;
+  height: 44px;
+  border: 1px solid #d1d5db;
+  border-radius: 50%;
+  background: #fff;
+  color: #303030;
+  font-size: 29px;
+  line-height: 1;
+  cursor: pointer;
+}
+.class-carousel__dots {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.class-carousel__dot {
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #aeb4bd;
+  cursor: pointer;
+  transition:
+    width 0.25s ease,
+    background 0.25s ease;
+}
+.class-carousel__dot.is-active {
+  width: 28px;
+  border-radius: 8px;
+  background: #b70f1e;
+}
+.class-carousel__counter {
+  margin: 10px 0 0;
+  color: #6b7280;
+  font-size: 12px;
+  text-align: center;
+}
+.class-carousel__arrow:focus-visible,
+.class-carousel__dot:focus-visible {
+  outline: 3px solid #b70f1e;
+  outline-offset: 4px;
+}
 
 /* Dark Mode. */
-html.dark .class-gallery { background: #0f172a; color: #f8fafc; }
-html.dark .class-gallery__header p, html.dark .class-carousel__counter { color: #cbd5e1; }
-html.dark .class-carousel__arrow { background: #1e293b; color: #f8fafc; border-color: #475569; }
+html.dark .class-gallery {
+  background: #0f172a;
+  color: #f8fafc;
+}
+html.dark .class-gallery__header p,
+html.dark .class-carousel__counter {
+  color: #cbd5e1;
+}
+html.dark .class-carousel__arrow {
+  background: #1e293b;
+  color: #f8fafc;
+  border-color: #475569;
+}
 
 /* Celulares: la imagen principal ocupa más espacio. */
 @media (max-width: 640px) {
-  .class-gallery { padding: 70px 16px 80px; }
-  .class-gallery__header p { font-size: 15px; }
-  .class-carousel__stage { height: 360px; }
-  .class-carousel__slide { width: 86%; height: 90%; border-radius: 18px; transform: translate(calc(-50% + var(--offset) * 88%), -50%) scale(.83); }
-  .class-carousel__slide.is-active { transform: translate(-50%, -50%) scale(1); }
-  .class-carousel__slide figcaption { left: 12px; bottom: 12px; font-size: 11px; }
+  .class-gallery {
+    padding: 70px 16px 80px;
+  }
+  .class-gallery__header p {
+    font-size: 15px;
+  }
+  .class-carousel__stage {
+    height: 360px;
+  }
+  .class-carousel__slide {
+    width: 86%;
+    height: 90%;
+    border-radius: 18px;
+    transform: translate(calc(-50% + var(--offset) * 88%), -50%) scale(0.83);
+  }
+  .class-carousel__slide.is-active {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  .class-carousel__slide figcaption {
+    left: 12px;
+    bottom: 12px;
+    font-size: 11px;
+  }
 }
 
 /* Accesibilidad: sin desplazamiento automático ni transiciones si se prefiere reducir movimiento. */
 @media (prefers-reduced-motion: reduce) {
-  .class-carousel__slide, .class-carousel__dot { transition: none; }
+  .class-carousel__slide,
+  .class-carousel__dot {
+    transition: none;
+  }
+}
+/* FASE 5 — CATÁLOGO DE CURSOS. Agregar una sola vez al final de src/styles.css */
+.course-catalog {
+  padding: 100px 24px;
+  background: #f7f7f8;
+  color: #171717;
+  scroll-margin-top: 112px;
+}
+.course-catalog__container {
+  max-width: 1160px;
+  margin: 0 auto;
+}
+.course-catalog__header {
+  max-width: 720px;
+  margin-bottom: 42px;
+}
+.course-catalog__eyebrow {
+  color: #b70f1e;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.17em;
+}
+.course-catalog__header h2 {
+  margin: 12px 0 14px;
+  font-size: clamp(36px, 5vw, 62px);
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+}
+.course-catalog__header h2 span {
+  color: #b70f1e;
+}
+.course-catalog__header p {
+  color: #666;
+  line-height: 1.7;
+  font-size: 16px;
+}
+.course-catalog__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  align-items: start;
+}
+.course-card {
+  background: #fff;
+  border: 1px solid #e5e5e8;
+  border-radius: 20px;
+  overflow: hidden;
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+.course-card:hover,
+.course-card--open {
+  border-color: rgba(183, 15, 30, 0.45);
+  box-shadow: 0 12px 35px rgba(20, 20, 20, 0.055);
+}
+.course-card__trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 24px;
+  background: transparent;
+  border: 0;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+  font: inherit;
+}
+.course-card__trigger:focus-visible,
+.course-card__cta:focus-visible,
+.course-catalog__note a:focus-visible {
+  outline: 3px solid #b70f1e;
+  outline-offset: 3px;
+}
+.course-card__number {
+  font-size: 12px;
+  font-weight: 800;
+  color: #b70f1e;
+}
+.course-card__name {
+  flex: 1;
+  font-size: clamp(16px, 2vw, 21px);
+  font-weight: 750;
+  line-height: 1.3;
+}
+.course-card__plus {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #f6eded;
+  color: #b70f1e;
+  font-size: 24px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+.course-card__panel {
+  padding: 0 24px 24px 50px;
+}
+.course-card__panel p {
+  margin: 0 0 20px;
+  color: #666;
+  line-height: 1.65;
+  font-size: 14px;
+}
+.course-card__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #b70f1e;
+  color: #fff;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 750;
+  padding: 12px 16px;
+  border-radius: 10px;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+.course-card__cta:hover {
+  background: #950b17;
+  transform: translateY(-2px);
+}
+.course-catalog__note {
+  margin-top: 30px;
+  color: #666;
+  font-size: 14px;
+}
+.course-catalog__note a {
+  color: #b70f1e;
+  font-weight: 750;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+html.dark .course-catalog {
+  background: #111318;
+  color: #f5f5f5;
+}
+html.dark .course-catalog__header p,
+html.dark .course-card__panel p,
+html.dark .course-catalog__note {
+  color: #b6b6be;
+}
+html.dark .course-card {
+  background: #1c1f27;
+  border-color: #343740;
+}
+html.dark .course-card:hover,
+html.dark .course-card--open {
+  border-color: rgba(255, 100, 110, 0.55);
+}
+html.dark .course-card__plus {
+  background: #382126;
+  color: #ff8e98;
+}
+html.dark .course-catalog__note a {
+  color: #ff8e98;
+}
+@media (max-width: 700px) {
+  .course-catalog {
+    padding: 72px 18px;
+    scroll-margin-top: 90px;
+  }
+  .course-catalog__grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .course-card__trigger {
+    padding: 20px;
+  }
+  .course-card__panel {
+    padding: 0 20px 20px 45px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .course-card,
+  .course-card__cta {
+    transition: none;
+  }
+}
+/* Recuperar visibilidad del control de tema sobre Navbar fijo. */
+.theme-control {
+  position: fixed;
+  top: 20px;
+  right: 32px;
+  z-index: 110;
+  display: block;
+  visibility: visible;
+  opacity: 1;
+}
+.theme-toggle {
+  display: grid;
+  place-items: center;
+}
+@media (max-width: 1023px) {
+  .theme-control {
+    top: 15px;
+    right: 82px;
+  }
+}
+
+/* ==========================================
+   MEDICINA SIN FILTROS
+   ALTERNANCIA DE SECCIONES
+========================================== */
+
+:root {
+  --section-light: #ffffff;
+  --section-dark: #303030;
+}
+
+/* HERO - BLANCO */
+.hero-section {
+  background-color: var(--section-light);
+}
+
+/* INTRODUCCIÓN - OSCURO */
+.courses-section {
+  background-color: var(--section-dark);
+}
+
+/* ¿POR QUÉ ELEGIRNOS? - BLANCO */
+.why-section {
+  background-color: var(--section-light);
+}
+
+/* GALERÍA - OSCURO */
+.class-gallery {
+  background-color: var(--section-dark);
+  color: #ffffff;
+}
+
+.class-gallery__header h2,
+.class-gallery__header p {
+  color: #ffffff;
+}
+
+.class-gallery__eyebrow {
+  color: #f2a5ad;
+}
+
+/* CATÁLOGO - BLANCO */
+.course-catalog {
+  background-color: var(--section-light);
+  color: #202020;
+}
+
+/* MODO OSCURO: fondos coherentes */
+html.dark .hero-section,
+html.dark .why-section,
+html.dark .course-catalog {
+  background-color: #171717;
+  color: #f5f5f5;
+}
+
+html.dark .courses-section,
+html.dark .class-gallery {
+  background-color: #303030;
+  color: #ffffff;
 }
