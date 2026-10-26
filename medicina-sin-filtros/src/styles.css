@@ -1,189 +1,419 @@
 
-@import url("https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* ==========================================
+   1. CONFIGURACIÓN GLOBAL
+========================================== */
+
 :root {
-  font-family: "DM Mono", monospace;
+  font-family: "Inter", sans-serif;
   color: #303030;
   background: #ffffff;
   font-synthesis: none;
 }
 
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body { margin: 0; min-width: 320px; }
-a { text-decoration: none; }
-button, a { -webkit-tap-highlight-color: transparent; }
+* {
+  box-sizing: border-box;
+}
 
-/* NAVBAR */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  font-family: "Inter", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  font-family: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid #B70F1E;
+  outline-offset: 3px;
+}
+
+/* ==========================================
+   2. NAVBAR - ACADEMIA TECNOLÓGICA
+========================================== */
+
 .nav-shell {
-  height: 91px;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 10px 22px;
   position: relative;
   z-index: 20;
+
+  width: 100%;
+  height: 96px;
+  padding: 18px 32px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.desktop-nav { display: flex; gap: 22px; }
+/* Contenedor gris de navegación */
+.desktop-nav {
+  display: flex;
+  align-items: center;
+  gap: 6px;
 
+  padding: 7px;
+
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+}
+
+/* Enlaces de navegación */
 .nav-pill {
-  background: linear-gradient(145deg, #ff5c48 5%, #ed3829 58%, #9f180d);
-  box-shadow: 0 4px 5px #0003;
-  border-radius: 100px;
-  color: white;
-  padding: 12px 24px;
-  min-width: 158px;
-  text-align: center;
-  font-size: 16px;
-  transition: transform .2s, box-shadow .2s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: auto;
+  padding: 12px 22px;
+
+  background: transparent;
+  background-image: none;
+
+  color: #374151;
+
+  border: 1px solid transparent;
+  border-radius: 11px;
+
+  box-shadow: none;
+
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+
+  white-space: nowrap;
+
+  transition:
+    background-color 200ms ease,
+    color 200ms ease,
+    transform 200ms ease;
 }
 
-.nav-pill:first-child { min-width: 238px; }
-.mobile-brand, .mobile-trigger { display: none; }
+/* Botón principal de inscripción */
+.nav-pill:first-child {
+  min-width: auto;
 
-/* HERO */
+  padding: 12px 24px;
+
+  background: #B70F1E;
+  color: #ffffff;
+}
+
+/* Elementos exclusivos de móvil */
+.mobile-brand,
+.mobile-trigger {
+  display: none;
+}
+
+/* ==========================================
+   3. HERO
+========================================== */
+
 .hero {
   max-width: 1180px;
   margin: 0 auto;
+
   min-height: 555px;
+
   display: grid;
   grid-template-columns: 1.24fr 1fr;
-  gap: 46px;
   align-items: center;
+  gap: 46px;
+
   padding: 30px 38px 90px;
 }
 
-.hero-copy { min-width: 0; }
+.hero-copy {
+  min-width: 0;
+}
 
+/* Etiqueta de inscripciones */
 .eyebrow {
-  font-size: 12px;
-  letter-spacing: 1.5px;
   display: inline-flex;
   align-items: center;
   gap: 10px;
+
   margin-bottom: 20px;
+
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+
   color: #a10d17;
 }
 
 .eyebrow-dot {
   width: 8px;
   height: 8px;
+
+  flex-shrink: 0;
+
   border-radius: 50%;
   background: #ec2833;
 }
 
+/* Título principal */
 .hero h1 {
-  font-family: "Anton", Impact, sans-serif;
-  font-weight: 400;
-  font-size: clamp(65px, 8vw, 126px);
-  letter-spacing: -1.8px;
-  line-height: 1.02;
   margin: 0 0 21px;
+
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(65px, 8vw, 126px);
+  font-weight: 800;
+
+  letter-spacing: -0.055em;
+  line-height: 1.08;
+
   white-space: nowrap;
 }
 
+/* Descripción */
 .hero p {
-  font-size: clamp(14px, 1.5vw, 18px);
-  line-height: 1.6;
   max-width: 600px;
   margin: 0;
+
+  font-family: "Inter", sans-serif;
+  font-size: clamp(14px, 1.5vw, 18px);
+  font-weight: 400;
+
+  letter-spacing: -0.01em;
+  line-height: 1.6;
 }
 
+/* Recuadro del corazón */
 .hero-art {
   width: 100%;
-  aspect-ratio: 1.14;
   max-width: 435px;
-  border: 3px solid #333;
-  border-radius: 49px;
+  aspect-ratio: 1.14;
+
   display: grid;
   place-items: center;
+
   justify-self: end;
+
+  border: 3px solid #333333;
+  border-radius: 49px;
 }
 
-.hero-art svg {
+/* ==========================================
+   4. CORAZÓN ANIMADO
+========================================== */
+
+.heart-svg {
   width: 80%;
   height: 82%;
-  max-height: 340px;
+  overflow: visible;
 }
 
-/* DRAWER */
-.drawer-overlay, .mobile-drawer { display: none; }
+/* Doble latido */
+.heart-beat {
+  transform-origin: 50% 50%;
+  transform-box: view-box;
+
+  animation: heartbeat 1.7s ease-in-out infinite;
+
+  will-change: transform;
+}
+
+@keyframes heartbeat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  12% {
+    transform: scale(1.08);
+  }
+
+  22% {
+    transform: scale(1);
+  }
+
+  34% {
+    transform: scale(1.045);
+  }
+
+  46%,
+  90% {
+    transform: scale(1);
+  }
+}
+
+/* Electrocardiograma animado */
+.ecg-line {
+  stroke-dasharray: 420;
+  stroke-dashoffset: 420;
+
+  animation: ecgPulse 1.7s linear infinite;
+}
+
+@keyframes ecgPulse {
+  0% {
+    stroke-dashoffset: 420;
+    opacity: 0.4;
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  70%,
+  85% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+
+  100% {
+    stroke-dashoffset: -420;
+    opacity: 0.4;
+  }
+}
+
+/* ==========================================
+   5. HOVER - SOLO COMPUTADORAS
+========================================== */
 
 @media (hover: hover) and (pointer: fine) {
   .nav-pill:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 7px 12px #0003;
+    background: #e5e7eb;
+    color: #111827;
+    transform: none;
+    box-shadow: none;
+  }
+
+  .nav-pill:first-child:hover {
+    background: #960c18;
+    color: #ffffff;
+    transform: translateY(-1px);
   }
 }
 
-/* TABLET Y CELULAR */
+/* ==========================================
+   6. DRAWER - ESTADO BASE
+========================================== */
+
+.drawer-overlay,
+.mobile-drawer {
+  display: none;
+}
+
+/* ==========================================
+   7. TABLET Y CELULAR
+========================================== */
+
 @media (max-width: 1023px) {
   .nav-shell {
-    height: 80px;
-    align-items: center;
+    height: 76px;
+    padding: 0 20px;
+
     justify-content: space-between;
-    padding: 0 22px;
+    align-items: center;
   }
 
-  .desktop-nav { display: none; }
+  .desktop-nav {
+    display: none;
+  }
 
+  /* Identidad de marca móvil */
   .mobile-brand {
     display: block;
-    font-family: "Anton", Impact, sans-serif;
+
+    font-family: "Poppins", sans-serif;
     font-size: 19px;
+    font-weight: 700;
+
     color: #303030;
   }
 
-  .mobile-brand span { color: #b30e1c; }
+  .mobile-brand span {
+    color: #B70F1E;
+  }
 
+  /* Botón de corazón móvil */
   .mobile-trigger {
     display: grid;
     place-items: center;
+
     width: 49px;
     height: 49px;
+
+    flex-shrink: 0;
+
     border: 0;
-    border-radius: 14px;
-    background: #b70f1e;
-    color: white;
+    border-radius: 12px;
+
+    background: #B70F1E;
+    color: #ffffff;
+
     font-size: 28px;
     cursor: pointer;
+
     animation: softpulse 2.5s ease-in-out infinite;
   }
 
+  /* Hero responsive */
   .hero {
     grid-template-columns: 1fr;
     gap: 36px;
+
     min-height: unset;
+
     padding: 45px 24px 76px;
   }
 
   .hero h1 {
     font-size: clamp(48px, 11vw, 86px);
-    letter-spacing: -.5px;
+    letter-spacing: -0.055em;
   }
 
-  .hero p { font-size: 14px; max-width: 530px; }
+  .hero p {
+    max-width: 530px;
+    font-size: 14px;
+  }
 
   .hero-art {
     width: min(100%, 440px);
     justify-self: center;
+
     border-radius: 36px;
   }
 
+  /* Fondo oscuro del menú */
   .drawer-overlay {
     display: block;
+
     position: fixed;
     inset: 0;
-    background: #0009;
     z-index: 30;
+
+    background: rgb(0 0 0 / 60%);
+
     opacity: 0;
     visibility: hidden;
-    transition: opacity .25s, visibility .25s;
+
+    transition:
+      opacity 250ms ease,
+      visibility 250ms ease;
   }
 
   .drawer-overlay.visible {
@@ -191,42 +421,62 @@ button, a { -webkit-tap-highlight-color: transparent; }
     visibility: visible;
   }
 
+  /* Menú lateral */
   .mobile-drawer {
     display: block;
+
     position: fixed;
     top: 0;
     bottom: 0;
     left: 0;
+
+    z-index: 40;
+
     width: min(85vw, 330px);
     padding: 26px;
-    background: white;
-    z-index: 40;
+
+    background: #ffffff;
+
     transform: translate3d(-102%, 0, 0);
-    transition: transform .3s ease;
-    box-shadow: 10px 0 35px #0002;
+
+    transition: transform 300ms ease;
+
+    box-shadow: 10px 0 35px rgb(0 0 0 / 12%);
   }
 
   .mobile-drawer.opened {
     transform: translate3d(0, 0, 0);
   }
 
+  /* Encabezado del drawer */
   .drawer-head {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-family: "Anton", sans-serif;
-    font-size: 26px;
+
     margin-bottom: 32px;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 26px;
+    font-weight: 700;
   }
 
   .drawer-head button {
-    background: #f5f5f5;
+    display: grid;
+    place-items: center;
+
+    width: 44px;
+    height: 44px;
+
+    background: #f3f4f6;
     border: 0;
     border-radius: 10px;
-    padding: 12px;
+
+    color: #303030;
     cursor: pointer;
   }
 
+  /* Navegación del drawer */
   .mobile-drawer nav {
     display: flex;
     flex-direction: column;
@@ -234,31 +484,67 @@ button, a { -webkit-tap-highlight-color: transparent; }
   }
 
   .mobile-drawer nav a {
-    padding: 16px;
-    border-radius: 12px;
-    background: #f7f7f7;
-    color: #333;
+    display: flex;
+    align-items: center;
+
+    min-height: 50px;
+    padding: 14px 16px;
+
+    background: #f3f4f6;
+    color: #374151;
+
+    border-radius: 11px;
+
+    font-family: "Inter", sans-serif;
     font-size: 14px;
+    font-weight: 600;
   }
 
   .mobile-drawer nav a:first-child {
-    background: #b80e1b;
-    color: white;
+    background: #B70F1E;
+    color: #ffffff;
   }
 }
 
+/* ==========================================
+   8. CELULARES PEQUEÑOS
+========================================== */
+
 @media (max-width: 380px) {
-  .hero h1 { font-size: 12vw; }
-  .mobile-brand { font-size: 16px; }
+  .hero h1 {
+    font-size: 12vw;
+  }
+
+  .mobile-brand {
+    font-size: 16px;
+  }
 }
 
+/* ==========================================
+   9. ANIMACIÓN DEL BOTÓN MÓVIL
+========================================== */
+
+@keyframes softpulse {
+  50% {
+    transform: scale(1.055);
+  }
+}
+
+/* ==========================================
+   10. ACCESIBILIDAD
+========================================== */
+
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+  *,
+  *::before,
+  *::after {
     animation: none !important;
     transition: none !important;
   }
-}
 
-@keyframes softpulse {
-  50% { transform: scale(1.055); }
+  .ecg-line {
+    stroke-dasharray: none;
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
 }

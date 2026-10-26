@@ -1,5 +1,6 @@
 
 import HeartIcon from "../ui/HeartIcon";
+import React from "react";
 
 export default function Hero() {
   return (

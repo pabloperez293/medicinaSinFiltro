@@ -1,5 +1,5 @@
 
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { FaHeartPulse, FaXmark } from "react-icons/fa6";
 import { navigation } from "../../data/navigation";
 
@@ -70,11 +70,11 @@ export default function Navbar() {
         aria-hidden="true"
       />
 
-      <aside
-        id="mobile-menu"
-        className={`mobile-drawer ${isOpen ? "opened" : ""}`}
-        aria-hidden={!isOpen}
-        inert={!isOpen}
+<aside
+  id="mobile-menu"
+  className={`mobile-drawer ${isOpen ? "opened" : ""}`}
+  aria-hidden={!isOpen}
+  {...(!isOpen ? { inert: "" } : {})}
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
