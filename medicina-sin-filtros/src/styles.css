@@ -865,3 +865,65 @@ html.dark .nav-shell.nav-scrolled .desktop-nav {
     transition: none;
   }
 }
+/* ==========================================================
+   FASE 4 - GALERÍA CARRUSEL
+   Pegá este bloque AL FINAL de src/styles.css.
+   Reemplaza los estilos anteriores de la galería (si existen).
+   No modifica el navbar, el corazón ni otras secciones.
+   ========================================================== */
+.class-gallery { padding: 96px 24px 100px; background: #f8f9fb; color: #303030; overflow: hidden; }
+.class-gallery__container { max-width: 1180px; margin: 0 auto; }
+.class-gallery__header { max-width: 760px; margin-bottom: 34px; }
+.class-gallery__eyebrow { display: block; margin-bottom: 15px; color: #B70F1E; font-size: 12px; font-weight: 700; letter-spacing: 1.6px; }
+.class-gallery__header h2 { margin: 0 0 16px; font-family: "Poppins", sans-serif; font-size: clamp(32px, 5vw, 60px); font-weight: 800; letter-spacing: -.045em; line-height: 1.15; }
+.class-gallery__header h2 span { color: #B70F1E; }
+.class-gallery__header p { margin: 0; font-size: 16px; line-height: 1.75; color: #5a6472; }
+
+/* Escenario con imagen central a color y laterales en blanco y negro. */
+.class-carousel { position: relative; }
+.class-carousel__stage { position: relative; height: clamp(290px, 43vw, 500px); perspective: 1000px; }
+.class-carousel__slide {
+  position: absolute; top: 50%; left: 50%; width: min(68%, 760px); height: 88%; margin: 0;
+  border-radius: 24px; overflow: hidden; background: #e5e7eb;
+  transform: translate(calc(-50% + var(--offset) * 67%), -50%) scale(.82);
+  opacity: .55; filter: grayscale(1); z-index: 1; pointer-events: none;
+  box-shadow: 0 12px 35px rgb(0 0 0 / 12%);
+  transition: transform .65s cubic-bezier(.22,1,.36,1), opacity .65s ease, filter .65s ease, box-shadow .65s ease;
+}
+.class-carousel__slide.is-active {
+  transform: translate(-50%, -50%) scale(1); opacity: 1; filter: grayscale(0); z-index: 3;
+  box-shadow: 0 24px 55px rgb(0 0 0 / 22%);
+}
+.class-carousel__slide img { display: block; width: 100%; height: 100%; object-fit: contain; background: #171717; }
+.class-carousel__slide figcaption {
+  position: absolute; left: 18px; bottom: 18px; padding: 10px 14px;
+  border-radius: 10px; background: rgb(0 0 0 / 76%); color: #fff;
+  font-size: 13px; font-weight: 700;
+}
+.class-carousel__controls { display: flex; align-items: center; justify-content: center; gap: 24px; margin-top: 20px; }
+.class-carousel__arrow { width: 44px; height: 44px; border: 1px solid #d1d5db; border-radius: 50%; background: #fff; color: #303030; font-size: 29px; line-height: 1; cursor: pointer; }
+.class-carousel__dots { display: flex; align-items: center; gap: 10px; }
+.class-carousel__dot { width: 10px; height: 10px; padding: 0; border: 0; border-radius: 50%; background: #aeb4bd; cursor: pointer; transition: width .25s ease, background .25s ease; }
+.class-carousel__dot.is-active { width: 28px; border-radius: 8px; background: #B70F1E; }
+.class-carousel__counter { margin: 10px 0 0; color: #6b7280; font-size: 12px; text-align: center; }
+.class-carousel__arrow:focus-visible, .class-carousel__dot:focus-visible { outline: 3px solid #B70F1E; outline-offset: 4px; }
+
+/* Dark Mode. */
+html.dark .class-gallery { background: #0f172a; color: #f8fafc; }
+html.dark .class-gallery__header p, html.dark .class-carousel__counter { color: #cbd5e1; }
+html.dark .class-carousel__arrow { background: #1e293b; color: #f8fafc; border-color: #475569; }
+
+/* Celulares: la imagen principal ocupa más espacio. */
+@media (max-width: 640px) {
+  .class-gallery { padding: 70px 16px 80px; }
+  .class-gallery__header p { font-size: 15px; }
+  .class-carousel__stage { height: 360px; }
+  .class-carousel__slide { width: 86%; height: 90%; border-radius: 18px; transform: translate(calc(-50% + var(--offset) * 88%), -50%) scale(.83); }
+  .class-carousel__slide.is-active { transform: translate(-50%, -50%) scale(1); }
+  .class-carousel__slide figcaption { left: 12px; bottom: 12px; font-size: 11px; }
+}
+
+/* Accesibilidad: sin desplazamiento automático ni transiciones si se prefiere reducir movimiento. */
+@media (prefers-reduced-motion: reduce) {
+  .class-carousel__slide, .class-carousel__dot { transition: none; }
+}

@@ -7,6 +7,7 @@ import ThemeToggle from "./components/ui/ThemeToggle";
 import FlyingHeart from "./components/ui/FlyingHeart";
 import useTheme from "./hooks/useTheme";
 import WhyChooseUs from "./components/sections/WhyChooseUs";
+import ClassGallery from "../../../../../AppData/Local/Temp/ClassGallery";
 
 
 export default function App() {
@@ -24,6 +25,7 @@ export default function App() {
         <Hero />
         <CoursesIntro />
         <WhyChooseUs />
+        <ClassGallery />
       </main>
 
       <FlyingHeart />
