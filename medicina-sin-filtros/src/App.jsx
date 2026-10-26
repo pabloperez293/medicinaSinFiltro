@@ -9,6 +9,7 @@ import useTheme from "./hooks/useTheme";
 import WhyChooseUs from "./components/sections/WhyChooseUs";
 import ClassGallery from "./components/sections/ClassGallery";
 import CourseCatalog from "./components/sections/CourseCatalog";
+import Footer from "./components/layout/Footer";
 
 export default function App() {
   const { theme, toggleTheme } = useTheme();
@@ -28,6 +29,8 @@ export default function App() {
         <ClassGallery />
         <CourseCatalog />
       </main>
+
+      <Footer />
 
       <FlyingHeart />
     </>

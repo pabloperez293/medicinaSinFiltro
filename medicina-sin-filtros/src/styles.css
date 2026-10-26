@@ -1596,3 +1596,517 @@ html.dark .class-gallery {
   background-color: #303030;
   color: #ffffff;
 }
+/* FASE 7 — Footer independiente. Pegar al FINAL de src/styles.css */
+.site-footer {
+  background: #303030;
+  color: #fff;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+.site-footer__inner {
+  width: min(1180px, calc(100% - 40px));
+  margin-inline: auto;
+}
+.site-footer__top {
+  display: grid;
+  grid-template-columns: 1.45fr 0.8fr 1fr;
+  gap: clamp(30px, 5vw, 90px);
+  padding: 76px 0 60px;
+}
+.site-footer__eyebrow {
+  display: block;
+  color: #f2a5ad;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  margin-bottom: 14px;
+}
+.site-footer__name {
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  font-family: Poppins, Inter, sans-serif;
+  font-size: clamp(1.2rem, 2.4vw, 1.65rem);
+  font-weight: 800;
+  line-height: 1.2;
+}
+.site-footer__name span {
+  color: #f2a5ad;
+}
+.site-footer__brand p,
+.site-footer__contact p {
+  color: #c9c9c9;
+  line-height: 1.75;
+  font-size: 0.94rem;
+  margin: 18px 0 0;
+  max-width: 360px;
+}
+.site-footer__nav,
+.site-footer__contact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+.site-footer__nav h2,
+.site-footer__contact h2 {
+  margin: 0 0 10px;
+  font-size: 1rem;
+  color: #fff;
+  font-weight: 700;
+}
+.site-footer__nav a,
+.site-footer__instagram {
+  color: #d8d8d8;
+  text-decoration: none;
+  font-size: 0.94rem;
+  transition: color 0.2s ease;
+}
+.site-footer__nav a:hover,
+.site-footer__instagram:hover {
+  color: #fff;
+}
+.site-footer__contact p {
+  margin: 0 0 8px;
+}
+.site-footer__whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 17px;
+  background: #b70f1e;
+  border-radius: 12px;
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+.site-footer__whatsapp:hover {
+  background: #d1192b;
+  transform: translateY(-2px);
+}
+.site-footer__instagram {
+  margin-top: 6px;
+}
+.site-footer__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 24px 0 30px;
+}
+.site-footer__bottom small {
+  font-size: 0.8rem;
+  color: #bcbcbc;
+  line-height: 1.6;
+}
+.site-footer__credit strong {
+  color: #fff;
+  font-weight: 700;
+}
+.site-footer__credit span {
+  color: #f2a5ad;
+  font-weight: 700;
+  margin-left: 4px;
+}
+.site-footer a:focus-visible {
+  outline: 2px solid #f2a5ad;
+  outline-offset: 4px;
+}
+html.dark .site-footer {
+  background: #202020;
+}
+@media (max-width: 850px) {
+  .site-footer__top {
+    grid-template-columns: 1fr 1fr;
+  }
+  .site-footer__brand {
+    grid-column: 1/-1;
+  }
+}
+@media (max-width: 560px) {
+  .site-footer__inner {
+    width: calc(100% - 36px);
+  }
+  .site-footer__top {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    padding: 55px 0 42px;
+  }
+  .site-footer__brand {
+    grid-column: auto;
+  }
+  .site-footer__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .site-footer * {
+    transition: none !important;
+  }
+}
+
+/* =====================================
+   FIRMA DEL DESARROLLADOR
+===================================== */
+
+.footer-developer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  text-align: center;
+  color: #bdbdbd;
+  font-size: 13px;
+}
+
+.footer-developer-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #ffffff;
+  font-weight: 700;
+  text-decoration: none;
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.footer-developer-link svg {
+  color: #f2a5ad;
+  transition: transform 0.3s ease;
+}
+
+.footer-developer-link:hover {
+  color: #f2a5ad;
+  transform: translateY(-2px);
+}
+
+.footer-developer-link:hover svg {
+  transform: scale(1.15);
+}
+
+.footer-developer-link:focus-visible {
+  outline: 2px solid #f2a5ad;
+  outline-offset: 4px;
+  border-radius: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .footer-developer-link,
+  .footer-developer-link svg {
+    transition: none;
+  }
+}
+
+/* ==========================================
+   FASE 7 - FOOTER MEDICINA SIN FILTROS
+========================================== */
+
+.site-footer {
+  background: #303030;
+  color: #ffffff;
+  padding: 65px 24px 22px;
+}
+
+.site-footer__container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.site-footer__top {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1.3fr;
+  gap: 45px;
+  padding-bottom: 48px;
+}
+
+/* Marca */
+
+.site-footer__brand h2 {
+  margin: 0 0 16px;
+  color: #ffffff;
+  font-size: clamp(20px, 2.4vw, 27px);
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.site-footer__brand h2 span {
+  color: #f2a5ad;
+}
+
+.site-footer__brand p {
+  max-width: 370px;
+  color: #d1d1d1;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* Navegación */
+
+.site-footer__navigation {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 13px;
+}
+
+.site-footer__navigation h3,
+.site-footer__social h3 {
+  margin: 0 0 9px;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.site-footer__navigation a {
+  color: #cccccc;
+  font-size: 14px;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.site-footer__navigation a:hover {
+  color: #f2a5ad;
+}
+
+/* Redes sociales */
+
+.site-footer__social-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.site-footer__social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 50px;
+  height: 50px;
+
+  border: 1px solid #626262;
+  border-radius: 50%;
+
+  background: #424242;
+  color: #ffffff;
+  text-decoration: none;
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.site-footer__social-link svg {
+  width: 23px;
+  height: 23px;
+}
+
+.site-footer__social-link:not(.site-footer__social-link--disabled):hover {
+  background: #b70f1e;
+  border-color: #b70f1e;
+  color: #ffffff;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(183, 15, 30, 0.25);
+}
+
+.site-footer__social-link--disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Pie inferior */
+
+.site-footer__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 18px;
+
+  border-top: 1px solid #555555;
+  padding-top: 24px;
+}
+
+.site-footer__bottom p {
+  margin: 0;
+  color: #bdbdbd;
+  font-size: 12px;
+}
+
+/* Firma del desarrollador */
+
+.footer-developer {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  color: #bdbdbd;
+  font-size: 13px;
+}
+
+.footer-developer-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #ffffff;
+  font-weight: 700;
+  text-decoration: none;
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.footer-developer-link svg {
+  width: 17px;
+  height: 17px;
+  color: #f2a5ad;
+}
+
+.footer-developer-link:hover {
+  color: #f2a5ad;
+  transform: translateY(-2px);
+}
+
+/* Accesibilidad */
+
+.site-footer a:focus-visible {
+  outline: 2px solid #f2a5ad;
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+/* Tablet */
+
+@media (max-width: 900px) {
+  .site-footer__top {
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+  }
+
+  .site-footer__brand {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Celulares */
+
+@media (max-width: 600px) {
+  .site-footer {
+    padding: 45px 20px 24px;
+  }
+
+  .site-footer__top {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding-bottom: 35px;
+  }
+
+  .site-footer__brand {
+    grid-column: auto;
+  }
+
+  .site-footer__bottom {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-developer {
+    justify-content: center;
+  }
+}
+
+/* Movimiento reducido */
+
+@media (prefers-reduced-motion: reduce) {
+  .site-footer__social-link,
+  .footer-developer-link {
+    transition: none;
+  }
+}
+
+/* ==========================================
+   CORAZÓN INTERACTIVO - TARJETAS DE CURSOS
+========================================== */
+
+.course-heart {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+}
+
+.course-heart svg {
+  width: 29px;
+  height: 29px;
+  overflow: visible;
+}
+
+.course-heart__left,
+.course-heart__right {
+  transform-box: fill-box;
+  transform-origin: center;
+  transition:
+    transform 0.45s cubic-bezier(.2,.8,.2,1);
+}
+
+/* Corazón entero: latido */
+.course-heart:not(.course-heart--broken) svg {
+  animation: course-heartbeat 1.8s ease-in-out infinite;
+}
+
+/* Corazón roto: separación de las mitades */
+.course-heart--broken .course-heart__left {
+  transform: translate(-4px, -2px) rotate(-12deg);
+}
+
+.course-heart--broken .course-heart__right {
+  transform: translate(4px, 2px) rotate(12deg);
+}
+
+/* Animación de latido */
+@keyframes course-heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  15% {
+    transform: scale(1.13);
+  }
+
+  30% {
+    transform: scale(1);
+  }
+
+  45% {
+    transform: scale(1.08);
+  }
+
+  60% {
+    transform: scale(1);
+  }
+}
+
+/* Accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+  .course-heart svg {
+    animation: none !important;
+  }
+
+  .course-heart__left,
+  .course-heart__right {
+    transition: none;
+  }
+}

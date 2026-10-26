@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import CourseHeart from "../ui/CourseHeart";
 
 const COURSES = [
   {
@@ -74,9 +75,7 @@ export default function CourseCatalog() {
                 >
                   <span className="course-card__number">{course.number}</span>
                   <span className="course-card__name">{course.name}</span>
-                  <span className="course-card__plus" aria-hidden="true">
-                    {isOpen ? "−" : "+"}
-                  </span>
+                  <CourseHeart open={isOpen} />
                 </button>
                 <div
                   id={panelId}
