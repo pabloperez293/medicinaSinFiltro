@@ -7,8 +7,7 @@ import ThemeToggle from "./components/ui/ThemeToggle";
 import FlyingHeart from "./components/ui/FlyingHeart";
 import useTheme from "./hooks/useTheme";
 import WhyChooseUs from "./components/sections/WhyChooseUs";
-import ClassGallery from "../../../../../AppData/Local/Temp/ClassGallery";
-
+import ClassGallery from "./components/sections/ClassGallery";
 
 export default function App() {
   const { theme, toggleTheme } = useTheme();
