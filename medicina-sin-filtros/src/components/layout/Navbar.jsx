@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState } from "react";
 import { FaHeartPulse, FaXmark } from "react-icons/fa6";
 import { navigation } from "../../data/navigation";
@@ -6,6 +5,23 @@ import { navigation } from "../../data/navigation";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const touchStartX = useRef(null);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 30);
+    };
+
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll, {
+      passive: true,
+    });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   useEffect(() => {
     const closeOnEscape = (event) => {
@@ -33,7 +49,7 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="nav-shell">
+      <header className={`nav-shell ${scrolled ? "nav-scrolled" : ""}`}>
         <a className="mobile-brand" href="#inicio">
           MEDICINA <span>SIN FILTROS</span>
         </a>
@@ -70,11 +86,11 @@ export default function Navbar() {
         aria-hidden="true"
       />
 
-<aside
-  id="mobile-menu"
-  className={`mobile-drawer ${isOpen ? "opened" : ""}`}
-  aria-hidden={!isOpen}
-  {...(!isOpen ? { inert: "" } : {})}
+      <aside
+        id="mobile-menu"
+        className={`mobile-drawer ${isOpen ? "opened" : ""}`}
+        aria-hidden={!isOpen}
+        {...(!isOpen ? { inert: "" } : {})}
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}

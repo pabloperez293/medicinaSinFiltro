@@ -6,6 +6,8 @@ import CoursesIntro from "./components/sections/CoursesIntro";
 import ThemeToggle from "./components/ui/ThemeToggle";
 import FlyingHeart from "./components/ui/FlyingHeart";
 import useTheme from "./hooks/useTheme";
+import WhyChooseUs from "./components/sections/WhyChooseUs";
+
 
 export default function App() {
   const { theme, toggleTheme } = useTheme();
@@ -21,6 +23,7 @@ export default function App() {
       <main>
         <Hero />
         <CoursesIntro />
+        <WhyChooseUs />
       </main>
 
       <FlyingHeart />

@@ -472,3 +472,396 @@ html.dark .benefit-card { background: #1e293b; border-color: #334155; }
   }
   .ecg-line { stroke-dasharray: none; stroke-dashoffset: 0; opacity: 1; }
 }
+
+
+/* ==========================================================
+   FASE 3 — ¿POR QUÉ ELEGIRNOS?
+   Agregar al FINAL de src/styles.css.
+   No modifica los estilos de las fases 1 y 2.
+   ========================================================== */
+
+/* 1. SECCIÓN Y CONTENEDOR ---------------------------------- */
+.why-section {
+  padding: 105px 32px;
+  background: #fff;
+  color: #303030;
+}
+
+.why-container {
+  width: 100%;
+  max-width: 1180px;
+  margin-inline: auto;
+}
+
+/* 2. ENCABEZADO -------------------------------------------- */
+.why-header {
+  max-width: 750px;
+  margin-bottom: 44px;
+}
+
+.why-eyebrow {
+  display: block;
+  margin-bottom: 14px;
+  color: #b70f1e;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.why-header h2 {
+  margin: 0 0 18px;
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(38px, 5vw, 64px);
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  line-height: 1.15;
+}
+
+.why-header h2 span { color: #b70f1e; }
+
+.why-header > p {
+  max-width: 630px;
+  margin: 0;
+  color: #626b78;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+/* 3. TARJETAS DE BENEFICIOS -------------------------------- */
+.why-benefits {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.why-benefit {
+  min-width: 0;
+  padding: 30px;
+  border: 1px solid #e5e7eb;
+  border-radius: 20px;
+  background: #f8f9fb;
+  transition: border-color 200ms ease, transform 200ms ease;
+}
+
+.why-benefit-number {
+  display: inline-block;
+  margin-bottom: 26px;
+  color: #b70f1e;
+  font-family: "Poppins", sans-serif;
+  font-size: 26px;
+  font-weight: 800;
+}
+
+.why-benefit h3 {
+  margin: 0 0 12px;
+  font-family: "Poppins", sans-serif;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.why-benefit p {
+  margin: 0;
+  color: #626b78;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* 4. ESPACIO PARA TESTIMONIOS REALES ----------------------- */
+.why-testimonials {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: center;
+  gap: 36px;
+  margin-top: 34px;
+  padding: 45px 50px;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+  border-radius: 24px;
+  background: #fff;
+}
+
+.why-testimonials-copy h3 {
+  margin: 0 0 16px;
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(26px, 3vw, 38px);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.2;
+}
+
+.why-testimonials-copy p {
+  max-width: 560px;
+  margin: 0 0 18px;
+  color: #626b78;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.why-testimonials-note {
+  display: inline-block;
+  color: #a10d17;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* Ilustración decorativa; no representa opiniones reales */
+.why-testimonials-art {
+  position: relative;
+  min-height: 225px;
+}
+
+.why-chat {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  width: 105px;
+  height: 85px;
+  border-radius: 24px 24px 24px 7px;
+  font-family: "Poppins", sans-serif;
+  font-size: 42px;
+  font-weight: 700;
+}
+
+.why-chat-one {
+  top: 10px;
+  left: 12%;
+  color: #fff;
+  background: #b70f1e;
+  transform: rotate(-9deg);
+}
+
+.why-chat-two {
+  top: 55px;
+  right: 4%;
+  color: #b70f1e;
+  background: #fce8eb;
+  transform: rotate(10deg);
+}
+
+.why-chat-three {
+  bottom: 3px;
+  left: 33%;
+  color: #fff;
+  background: #303030;
+  transform: rotate(-4deg);
+}
+
+/* 5. DARK MODE --------------------------------------------- */
+html.dark .why-section {
+  background: #0f172a;
+  color: #f8fafc;
+}
+
+html.dark .why-header > p,
+html.dark .why-benefit p,
+html.dark .why-testimonials-copy p {
+  color: #cbd5e1;
+}
+
+html.dark .why-benefit,
+html.dark .why-testimonials {
+  background: #1e293b;
+  border-color: #334155;
+}
+
+html.dark .why-eyebrow,
+html.dark .why-benefit-number,
+html.dark .why-header h2 span,
+html.dark .why-testimonials-note {
+  color: #f28d95;
+}
+
+/* 6. HOVER SOLO EN DISPOSITIVOS CON MOUSE ------------------ */
+@media (hover: hover) and (pointer: fine) {
+  .why-benefit:hover {
+    transform: translateY(-5px);
+    border-color: #b70f1e;
+  }
+}
+
+/* 7. TABLETS ----------------------------------------------- */
+@media (max-width: 1023px) {
+  .why-section { padding: 80px 24px; }
+  .why-benefits { grid-template-columns: 1fr; }
+  .why-benefit { padding: 26px; }
+  .why-benefit-number { margin-bottom: 14px; }
+  .why-testimonials { padding: 36px; }
+}
+
+/* 8. CELULARES --------------------------------------------- */
+@media (max-width: 640px) {
+  .why-section { padding: 70px 22px; }
+  .why-header { margin-bottom: 30px; }
+  .why-header > p { font-size: 15px; }
+  .why-benefits { gap: 14px; }
+  .why-benefit { padding: 24px; }
+  .why-testimonials {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    margin-top: 20px;
+    padding: 28px 24px;
+  }
+  .why-testimonials-art { min-height: 185px; }
+  .why-chat { width: 88px; height: 72px; font-size: 34px; }
+}
+
+/* 9. ACCESIBILIDAD ----------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .why-benefit { transition: none; }
+}
+/* ============================================================
+   FASE 3 — CORAZONES QUE REAPARECEN EN CADA BENEFICIO
+   Agregar AL FINAL del styles.css existente.
+   No modifica el corazón viajero de las fases 1 y 2.
+   ============================================================ */
+
+.why-benefit-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 88px;
+}
+
+.why-benefit-number {
+  margin-bottom: 0;
+}
+
+.why-benefit-heart {
+  display: block;
+  flex: 0 0 auto;
+  width: clamp(70px, 8vw, 105px);
+  height: clamp(70px, 8vw, 105px);
+  opacity: 0;
+  transform: translateY(-40px) scale(.6);
+}
+
+.why-benefit-heart .heart-svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Al entrar en pantalla, cada corazón salta y se queda latiendo. */
+.why-benefit.is-visible .why-benefit-heart {
+  animation: whyHeartJump 850ms cubic-bezier(.2,.8,.2,1) both;
+}
+
+/* Entrada escalonada en escritorio. */
+.why-benefit:nth-child(2).is-visible .why-benefit-heart { animation-delay: 160ms; }
+.why-benefit:nth-child(3).is-visible .why-benefit-heart { animation-delay: 320ms; }
+
+@keyframes whyHeartJump {
+  0%   { opacity: 0; transform: translateY(-40px) scale(.6); }
+  55%  { opacity: 1; transform: translateY(10px) scale(1.08); }
+  75%  { opacity: 1; transform: translateY(-8px) scale(.96); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@media (max-width: 1023px) {
+  .why-benefit-top { min-height: 76px; }
+  .why-benefit-heart { width: 82px; height: 82px; }
+}
+
+@media (max-width: 640px) {
+  .why-benefit-top { min-height: 70px; }
+  .why-benefit-heart { width: 75px; height: 75px; }
+  /* En móvil cada tarjeta se revela al llegar a pantalla, sin retrasos. */
+  .why-benefit:nth-child(2).is-visible .why-benefit-heart,
+  .why-benefit:nth-child(3).is-visible .why-benefit-heart { animation-delay: 0ms; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .why-benefit-heart { opacity: 1; transform: none; }
+  .why-benefit.is-visible .why-benefit-heart { animation: none; }
+}
+
+/* ==========================================
+   NAVBAR FLOTANTE CON EFECTO GLASS
+========================================== */
+
+/* Navbar siempre visible */
+.nav-shell {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+
+  transition:
+    background-color 350ms ease,
+    box-shadow 350ms ease;
+}
+
+/* Barra de navegación */
+.desktop-nav {
+  transition:
+    background-color 350ms ease,
+    border-color 350ms ease,
+    box-shadow 350ms ease,
+    transform 350ms ease;
+}
+
+/* Efecto al hacer scroll */
+.nav-shell.nav-scrolled .desktop-nav {
+  background: rgba(20, 20, 20, 0.92);
+  border-color: rgba(255, 255, 255, 0.15);
+
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, 0.2);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  transform: translateY(3px);
+}
+
+/* Enlaces en el fondo oscuro */
+.nav-shell.nav-scrolled .nav-pill:not(:first-child) {
+  color: #ffffff;
+}
+
+/* Botón principal */
+.nav-shell.nav-scrolled .nav-pill:first-child {
+  background: #B70F1E;
+  color: #ffffff;
+}
+
+/* Hover */
+@media (hover: hover) and (pointer: fine) {
+  .nav-shell.nav-scrolled .nav-pill:not(:first-child):hover {
+    background: rgba(255, 255, 255, 0.14);
+    color: #ffffff;
+  }
+}
+
+/* Modo oscuro */
+html.dark .nav-shell.nav-scrolled .desktop-nav {
+  background: rgba(15, 23, 42, 0.94);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Móviles */
+@media (max-width: 1023px) {
+  .nav-shell.nav-scrolled {
+    background: rgba(255, 255, 255, 0.94);
+
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  }
+
+  html.dark .nav-shell.nav-scrolled {
+    background: rgba(15, 23, 42, 0.95);
+  }
+}
+
+/* Accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+  .nav-shell,
+  .desktop-nav {
+    transition: none;
+  }
+}
