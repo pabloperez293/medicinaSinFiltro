@@ -1,30 +1,31 @@
-import { useState } from "react";
 
-export function useSwipe(onSwipeLeft) {
-  const [touchStart, setTouchStart] = useState(null);
-  const [touchEnd, setTouchEnd] = useState(null);
+import { useEffect, useState } from "react";
 
-  // Distancia mínima en píxeles para considerar que fue un deslizamiento
-  const minSwipeDistance = 50;
+export default function useTheme() {
+  const [theme, setTheme] = useState(() => {
+    const saved = localStorage.getItem("medicina-theme");
 
-  const onTouchStart = (e) => {
-    setTouchEnd(null);
-    setTouchStart(e.targetTouches[0].clientX);
-  };
-
-  const onTouchMove = (e) => {
-    setTouchEnd(e.targetTouches[0].clientX);
-  };
-
-  const onTouchEnd = () => {
-    if (!touchStart || !touchEnd) return;
-    const distance = touchStart - touchEnd;
-    const isLeftSwipe = distance > minSwipeDistance;
-
-    if (isLeftSwipe && onSwipeLeft) {
-      onSwipeLeft();
+    if (saved === "dark" || saved === "light") {
+      return saved;
     }
+
+    return window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light";
+  });
+
+  useEffect(() => {
+    document.documentElement.classList.toggle(
+      "dark",
+      theme === "dark"
+    );
+
+    localStorage.setItem("medicina-theme", theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((current) => current === "dark" ? "light" : "dark");
   };
 
-  return { onTouchStart, onTouchMove, onTouchEnd };
+  return { theme, toggleTheme };
 }

@@ -1,5 +1,4 @@
 
-import HeartIcon from "../ui/HeartIcon";
 import React from "react";
 
 export default function Hero() {
@@ -27,9 +26,7 @@ export default function Hero() {
         </p>
       </div>
 
-      <div className="hero-art">
-        <HeartIcon />
-      </div>
+      <div className="hero-art" aria-hidden="true" />
     </section>
   );
 }

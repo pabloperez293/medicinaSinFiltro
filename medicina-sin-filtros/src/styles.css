@@ -1,550 +1,440 @@
+/* ============================================================
+   MEDICINA SIN FILTROS | FASES 1 Y 2
+   Archivo único: src/styles.css
+   Índice:
+   01 Fuentes y Tailwind       06 Cursos y beneficios
+   02 Variables y base        07 Corazón viajero
+   03 Navbar                  08 Modo oscuro
+   04 Hero                    09 Hover
+   05 Animaciones cardíacas   10 Responsive y accesibilidad
+   ============================================================ */
 
+/* 01. FUENTES Y TAILWIND ------------------------------------- */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap");
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* ==========================================
-   1. CONFIGURACIÓN GLOBAL
-========================================== */
-
+/* 02. VARIABLES Y BASE --------------------------------------- */
 :root {
-  font-family: "Inter", sans-serif;
-  color: #303030;
-  background: #ffffff;
+  --brand: #B70F1E;
+  --brand-hover: #960c18;
+  --text: #303030;
+  --surface: #ffffff;
+  --nav-surface: #f3f4f6;
+  --nav-border: #e5e7eb;
+  --font-body: "Inter", sans-serif;
+  --font-heading: "Poppins", sans-serif;
+  font-family: var(--font-body);
+  color: var(--text);
+  background: var(--surface);
+  color-scheme: light;
   font-synthesis: none;
 }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; min-width: 320px; font-family: var(--font-body); }
+a { text-decoration: none; }
+button, a { -webkit-tap-highlight-color: transparent; }
+button { font-family: inherit; }
+:focus-visible { outline: 3px solid var(--brand); outline-offset: 3px; }
 
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  min-width: 320px;
-  font-family: "Inter", sans-serif;
-}
-
-a {
-  text-decoration: none;
-}
-
-button,
-a {
-  -webkit-tap-highlight-color: transparent;
-}
-
-button {
-  font-family: inherit;
-}
-
-:focus-visible {
-  outline: 3px solid #B70F1E;
-  outline-offset: 3px;
-}
-
-/* ==========================================
-   2. NAVBAR - ACADEMIA TECNOLÓGICA
-========================================== */
-
+/* 03. NAVBAR: ACADEMIA TECNOLÓGICA --------------------------- */
 .nav-shell {
   position: relative;
   z-index: 20;
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: 96px;
   padding: 18px 32px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
-
-/* Contenedor gris de navegación */
 .desktop-nav {
   display: flex;
   align-items: center;
   gap: 6px;
-
   padding: 7px;
-
-  background: #f3f4f6;
-  border: 1px solid #e5e7eb;
+  background: var(--nav-surface);
+  border: 1px solid var(--nav-border);
   border-radius: 16px;
 }
-
-/* Enlaces de navegación */
 .nav-pill {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
   min-width: auto;
   padding: 12px 22px;
-
   background: transparent;
-  background-image: none;
-
   color: #374151;
-
   border: 1px solid transparent;
   border-radius: 11px;
-
   box-shadow: none;
-
-  font-family: "Inter", sans-serif;
+  font-family: var(--font-body);
   font-size: 14px;
   font-weight: 600;
-  letter-spacing: -0.02em;
-
+  letter-spacing: -.02em;
   white-space: nowrap;
-
-  transition:
-    background-color 200ms ease,
-    color 200ms ease,
-    transform 200ms ease;
+  transition: background-color .2s ease, color .2s ease, transform .2s ease;
 }
-
-/* Botón principal de inscripción */
 .nav-pill:first-child {
-  min-width: auto;
-
   padding: 12px 24px;
+  background: var(--brand);
+  color: #fff;
+}
+.mobile-brand, .mobile-trigger, .drawer-overlay, .mobile-drawer { display: none; }
 
-  background: #B70F1E;
-  color: #ffffff;
+/* Control de modo oscuro, colocado junto al Navbar */
+.theme-control { position: absolute; top: 27px; right: 32px; z-index: 21; }
+.theme-toggle {
+  display: grid;
+  place-items: center;
+  width: 43px;
+  height: 43px;
+  background: var(--nav-surface);
+  color: var(--text);
+  border: 1px solid var(--nav-border);
+  border-radius: 12px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background-color .2s ease, color .2s ease;
 }
 
-/* Elementos exclusivos de móvil */
-.mobile-brand,
-.mobile-trigger {
-  display: none;
-}
-
-/* ==========================================
-   3. HERO
-========================================== */
-
+/* 04. HERO --------------------------------------------------- */
 .hero {
-  max-width: 1180px;
-  margin: 0 auto;
-
-  min-height: 555px;
-
   display: grid;
   grid-template-columns: 1.24fr 1fr;
   align-items: center;
   gap: 46px;
-
+  max-width: 1180px;
+  min-height: 555px;
+  margin: 0 auto;
   padding: 30px 38px 90px;
 }
-
-.hero-copy {
-  min-width: 0;
-}
-
-/* Etiqueta de inscripciones */
+.hero-copy { min-width: 0; }
 .eyebrow {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-
   margin-bottom: 20px;
-
+  color: #a10d17;
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 1.5px;
-
-  color: #a10d17;
 }
-
 .eyebrow-dot {
+  flex-shrink: 0;
   width: 8px;
   height: 8px;
-
-  flex-shrink: 0;
-
-  border-radius: 50%;
   background: #ec2833;
+  border-radius: 50%;
 }
-
-/* Título principal */
 .hero h1 {
   margin: 0 0 21px;
-
-  font-family: "Poppins", sans-serif;
+  font-family: var(--font-heading);
   font-size: clamp(65px, 8vw, 126px);
   font-weight: 800;
-
-  letter-spacing: -0.055em;
+  letter-spacing: -.055em;
   line-height: 1.08;
-
   white-space: nowrap;
 }
-
-/* Descripción */
 .hero p {
   max-width: 600px;
   margin: 0;
-
-  font-family: "Inter", sans-serif;
+  font-family: var(--font-body);
   font-size: clamp(14px, 1.5vw, 18px);
   font-weight: 400;
-
-  letter-spacing: -0.01em;
+  letter-spacing: -.01em;
   line-height: 1.6;
 }
-
-/* Recuadro del corazón */
 .hero-art {
+  display: grid;
+  place-items: center;
+  justify-self: end;
   width: 100%;
   max-width: 435px;
   aspect-ratio: 1.14;
-
-  display: grid;
-  place-items: center;
-
-  justify-self: end;
-
-  border: 3px solid #333333;
+  border: 3px solid #333;
   border-radius: 49px;
 }
 
-/* ==========================================
-   4. CORAZÓN ANIMADO
-========================================== */
-
-.heart-svg {
-  width: 80%;
-  height: 82%;
-  overflow: visible;
-}
-
-/* Doble latido */
+/* 05. LATIDO Y ELECTROCARDIOGRAMA ---------------------------- */
+.heart-svg { width: 80%; height: 82%; overflow: visible; }
 .heart-beat {
   transform-origin: 50% 50%;
   transform-box: view-box;
-
   animation: heartbeat 1.7s ease-in-out infinite;
-
   will-change: transform;
 }
-
 @keyframes heartbeat {
-  0%,
-  100% {
-    transform: scale(1);
-  }
-
-  12% {
-    transform: scale(1.08);
-  }
-
-  22% {
-    transform: scale(1);
-  }
-
-  34% {
-    transform: scale(1.045);
-  }
-
-  46%,
-  90% {
-    transform: scale(1);
-  }
+  0%, 22%, 46%, 90%, 100% { transform: scale(1); }
+  12% { transform: scale(1.08); }
+  34% { transform: scale(1.045); }
 }
-
-/* Electrocardiograma animado */
 .ecg-line {
   stroke-dasharray: 420;
   stroke-dashoffset: 420;
-
   animation: ecgPulse 1.7s linear infinite;
 }
-
 @keyframes ecgPulse {
-  0% {
-    stroke-dashoffset: 420;
-    opacity: 0.4;
-  }
+  0% { stroke-dashoffset: 420; opacity: .4; }
+  15% { opacity: 1; }
+  70%, 85% { stroke-dashoffset: 0; opacity: 1; }
+  100% { stroke-dashoffset: -420; opacity: .4; }
+}
+@keyframes softpulse { 50% { transform: scale(1.055); } }
 
-  15% {
-    opacity: 1;
-  }
+/* 06. PRESENTACIÓN DE CURSOS Y BENEFICIOS -------------------- */
+.courses-section { padding: 100px 32px; background: #303030; color: #fff; }
+.courses-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: clamp(40px, 7vw, 110px);
+  max-width: 1180px;
+  margin: 0 auto;
+}
+.courses-visual {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  min-height: 370px;
+  border: 2px solid var(--brand);
+  border-radius: 38px;
+}
+/* Marcador de destino: su centro se usa desde FlyingHeart.jsx */
+.courses-heart-target {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 250px;
+  height: 250px;
+  margin: 0;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+.courses-visual-label {
+  position: absolute;
+  bottom: 32px;
+  left: 0;
+  width: 100%;
+  padding: 0 16px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-align: center;
+}
+/* Se conserva por compatibilidad si aún existe el icono anterior */
+.courses-main-icon { font-size: clamp(100px, 13vw, 175px); color: var(--brand); }
+.courses-eyebrow {
+  display: block;
+  margin-bottom: 18px;
+  color: #f28d95;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+.courses-content h2 {
+  margin: 0 0 28px;
+  color: #e12a39;
+  font-family: var(--font-heading);
+  font-size: clamp(32px, 4.2vw, 58px);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -.045em;
+}
+.courses-description {
+  max-width: 520px;
+  margin: 0 0 20px;
+  color: #e5e7eb;
+  font-size: 16px;
+  line-height: 1.85;
+}
+.courses-benefits {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  max-width: 1180px;
+  margin: 75px auto 0;
+}
+.benefit-card {
+  padding: 30px;
+  background: #383838;
+  border: 1px solid #555;
+  border-radius: 18px;
+  transition: transform .2s ease, border-color .2s ease;
+}
+.benefit-icon { margin-bottom: 18px; color: #f05260; font-size: 28px; }
+.benefit-card h3 {
+  margin: 0 0 12px;
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 700;
+}
+.benefit-card p { margin: 0; color: #d1d5db; font-size: 14px; line-height: 1.7; }
 
-  70%,
-  85% {
-    stroke-dashoffset: 0;
-    opacity: 1;
-  }
-
-  100% {
-    stroke-dashoffset: -420;
-    opacity: 0.4;
-  }
+/* 07. CORAZÓN VIAJERO Y GORRO ------------------------------- */
+/* Posición y tamaño se calculan desde FlyingHeart.jsx */
+.flying-heart {
+  position: fixed;
+  z-index: 25;
+  aspect-ratio: 1;
+  pointer-events: none;
+  will-change: transform;
+}
+.flying-heart .heart-svg { display: block; width: 100%; height: 100%; }
+.graduation-cap {
+  transform-origin: 160px 80px;
+  transform-box: view-box;
+  animation: capAppear .5s ease-out both;
+}
+@keyframes capAppear {
+  from { opacity: 0; transform: translateY(-15px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-/* ==========================================
-   5. HOVER - SOLO COMPUTADORAS
-========================================== */
+/* 08. DARK MODE ---------------------------------------------- */
+html.dark { color-scheme: dark; background: #0f172a; }
+html.dark body { background: #0f172a; color: #f8fafc; }
+html.dark .nav-shell { background: #0f172a; }
+html.dark .desktop-nav { background: #1e293b; border-color: #334155; }
+html.dark .nav-pill:not(:first-child) { color: #e2e8f0; }
+html.dark .hero { color: #f8fafc; }
+html.dark .hero-art { border-color: #94a3b8; }
+html.dark .mobile-brand { color: #f8fafc; }
+html.dark .theme-toggle { background: #1e293b; border-color: #334155; color: #f8fafc; }
+html.dark .mobile-drawer { background: #172033; color: #f8fafc; }
+html.dark .mobile-drawer nav a:not(:first-child),
+html.dark .drawer-head button { background: #263449; color: #f8fafc; }
+html.dark .courses-section { background: #111827; }
+html.dark .benefit-card { background: #1e293b; border-color: #334155; }
 
+/* 09. HOVER: SOLO MOUSE -------------------------------------- */
 @media (hover: hover) and (pointer: fine) {
-  .nav-pill:hover {
-    background: #e5e7eb;
-    color: #111827;
-    transform: none;
-    box-shadow: none;
-  }
-
-  .nav-pill:first-child:hover {
-    background: #960c18;
-    color: #ffffff;
-    transform: translateY(-1px);
-  }
+  .nav-pill:hover { background: #e5e7eb; color: #111827; transform: none; box-shadow: none; }
+  .nav-pill:first-child:hover { background: var(--brand-hover); color: #fff; transform: translateY(-1px); }
+  .benefit-card:hover { transform: translateY(-5px); border-color: var(--brand); }
+  html.dark .nav-pill:not(:first-child):hover { background: #334155; color: #fff; }
 }
 
-/* ==========================================
-   6. DRAWER - ESTADO BASE
-========================================== */
-
-.drawer-overlay,
-.mobile-drawer {
-  display: none;
-}
-
-/* ==========================================
-   7. TABLET Y CELULAR
-========================================== */
-
+/* 10. RESPONSIVE --------------------------------------------- */
 @media (max-width: 1023px) {
-  .nav-shell {
-    height: 76px;
-    padding: 0 20px;
-
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .desktop-nav {
-    display: none;
-  }
-
-  /* Identidad de marca móvil */
+  .nav-shell { height: 76px; padding: 0 20px; justify-content: space-between; }
+  .desktop-nav { display: none; }
   .mobile-brand {
     display: block;
-
-    font-family: "Poppins", sans-serif;
+    font-family: var(--font-heading);
     font-size: 19px;
     font-weight: 700;
-
     color: #303030;
   }
-
-  .mobile-brand span {
-    color: #B70F1E;
-  }
-
-  /* Botón de corazón móvil */
+  .mobile-brand span { color: var(--brand); }
   .mobile-trigger {
     display: grid;
     place-items: center;
-
+    flex-shrink: 0;
     width: 49px;
     height: 49px;
-
-    flex-shrink: 0;
-
+    background: var(--brand);
+    color: #fff;
     border: 0;
     border-radius: 12px;
-
-    background: #B70F1E;
-    color: #ffffff;
-
     font-size: 28px;
     cursor: pointer;
-
     animation: softpulse 2.5s ease-in-out infinite;
   }
+  .theme-control { top: 16px; right: 82px; }
+  .hero { grid-template-columns: 1fr; gap: 36px; min-height: unset; padding: 45px 24px 76px; }
+  .hero h1 { font-size: clamp(48px, 11vw, 86px); letter-spacing: -.055em; }
+  .hero p { max-width: 530px; font-size: 14px; }
+  .hero-art { width: min(100%, 440px); justify-self: center; border-radius: 36px; }
 
-  /* Hero responsive */
-  .hero {
-    grid-template-columns: 1fr;
-    gap: 36px;
-
-    min-height: unset;
-
-    padding: 45px 24px 76px;
-  }
-
-  .hero h1 {
-    font-size: clamp(48px, 11vw, 86px);
-    letter-spacing: -0.055em;
-  }
-
-  .hero p {
-    max-width: 530px;
-    font-size: 14px;
-  }
-
-  .hero-art {
-    width: min(100%, 440px);
-    justify-self: center;
-
-    border-radius: 36px;
-  }
-
-  /* Fondo oscuro del menú */
+  /* Fondo que aparece detrás del menú lateral */
   .drawer-overlay {
     display: block;
-
     position: fixed;
     inset: 0;
     z-index: 30;
-
     background: rgb(0 0 0 / 60%);
-
     opacity: 0;
     visibility: hidden;
-
-    transition:
-      opacity 250ms ease,
-      visibility 250ms ease;
+    transition: opacity .25s ease, visibility .25s ease;
   }
-
-  .drawer-overlay.visible {
-    opacity: 1;
-    visibility: visible;
-  }
-
-  /* Menú lateral */
+  .drawer-overlay.visible { opacity: 1; visibility: visible; }
   .mobile-drawer {
     display: block;
-
     position: fixed;
     top: 0;
     bottom: 0;
     left: 0;
-
     z-index: 40;
-
     width: min(85vw, 330px);
     padding: 26px;
-
-    background: #ffffff;
-
+    background: #fff;
     transform: translate3d(-102%, 0, 0);
-
-    transition: transform 300ms ease;
-
+    transition: transform .3s ease;
     box-shadow: 10px 0 35px rgb(0 0 0 / 12%);
   }
-
-  .mobile-drawer.opened {
-    transform: translate3d(0, 0, 0);
-  }
-
-  /* Encabezado del drawer */
+  .mobile-drawer.opened { transform: translate3d(0, 0, 0); }
   .drawer-head {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     margin-bottom: 32px;
-
-    font-family: "Poppins", sans-serif;
+    font-family: var(--font-heading);
     font-size: 26px;
     font-weight: 700;
   }
-
   .drawer-head button {
     display: grid;
     place-items: center;
-
     width: 44px;
     height: 44px;
-
     background: #f3f4f6;
+    color: #303030;
     border: 0;
     border-radius: 10px;
-
-    color: #303030;
     cursor: pointer;
   }
-
-  /* Navegación del drawer */
-  .mobile-drawer nav {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-
+  .mobile-drawer nav { display: flex; flex-direction: column; gap: 12px; }
   .mobile-drawer nav a {
     display: flex;
     align-items: center;
-
     min-height: 50px;
     padding: 14px 16px;
-
     background: #f3f4f6;
     color: #374151;
-
     border-radius: 11px;
-
-    font-family: "Inter", sans-serif;
+    font-family: var(--font-body);
     font-size: 14px;
     font-weight: 600;
   }
+  .mobile-drawer nav a:first-child { background: var(--brand); color: #fff; }
 
-  .mobile-drawer nav a:first-child {
-    background: #B70F1E;
-    color: #ffffff;
-  }
+  .courses-container { grid-template-columns: 1fr; gap: 42px; }
+  .courses-visual { width: 100%; max-width: 500px; min-height: 290px; margin: 0 auto; }
+  .courses-benefits { grid-template-columns: 1fr; max-width: 600px; }
 }
-
-/* ==========================================
-   8. CELULARES PEQUEÑOS
-========================================== */
-
+@media (max-width: 640px) {
+  .courses-section { padding: 70px 22px; }
+  .courses-content h2 { font-size: clamp(30px, 8vw, 42px); }
+  .courses-description { font-size: 15px; line-height: 1.75; }
+  .courses-visual { min-height: 280px; border-radius: 26px; }
+  .courses-heart-target { width: 190px; height: 190px; }
+  .courses-visual-label { bottom: 22px; font-size: 10px; }
+  .courses-benefits { margin-top: 45px; }
+  .benefit-card { padding: 24px; }
+}
 @media (max-width: 380px) {
-  .hero h1 {
-    font-size: 12vw;
-  }
-
-  .mobile-brand {
-    font-size: 16px;
-  }
+  .hero h1 { font-size: 12vw; }
+  .mobile-brand { font-size: 16px; }
 }
 
-/* ==========================================
-   9. ANIMACIÓN DEL BOTÓN MÓVIL
-========================================== */
-
-@keyframes softpulse {
-  50% {
-    transform: scale(1.055);
-  }
-}
-
-/* ==========================================
-   10. ACCESIBILIDAD
-========================================== */
-
+/* 11. ACCESIBILIDAD: REDUCIR MOVIMIENTO ---------------------- */
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation: none !important;
-    transition: none !important;
-  }
-
-  .ecg-line {
-    stroke-dasharray: none;
-    stroke-dashoffset: 0;
-    opacity: 1;
-  }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .ecg-line { stroke-dasharray: none; stroke-dashoffset: 0; opacity: 1; }
 }
