@@ -1,45 +1,38 @@
 /* ============================================================
-   MEDICINA SIN FILTROS | FASES 1 Y 2
-   Archivo único: src/styles.css
-   Índice:
-   01 Fuentes y Tailwind       06 Cursos y beneficios
-   02 Variables y base        07 Corazón viajero
-   03 Navbar                  08 Modo oscuro
-   04 Hero                    09 Hover
-   05 Animaciones cardíacas   10 Responsive y accesibilidad
+   MEDICINA SIN FILTROS — ESTILOS GLOBALES
+   Fase 1: Navbar + Hero | Fase 2: Cursos + corazón viajero
+   Orden: base, navegación, hero, animaciones, cursos, tema,
+   interacciones, responsive y accesibilidad.
    ============================================================ */
 
-/* 01. FUENTES Y TAILWIND ------------------------------------- */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* 02. VARIABLES Y BASE --------------------------------------- */
+/* 01. VARIABLES Y RESETEO ----------------------------------- */
 :root {
-  --brand: #B70F1E;
-  --brand-hover: #960c18;
-  --text: #303030;
-  --surface: #ffffff;
-  --nav-surface: #f3f4f6;
-  --nav-border: #e5e7eb;
-  --font-body: "Inter", sans-serif;
-  --font-heading: "Poppins", sans-serif;
-  font-family: var(--font-body);
-  color: var(--text);
-  background: var(--surface);
-  color-scheme: light;
+  font-family: "Inter", sans-serif;
   font-synthesis: none;
+  color: #303030;
+  background: #fff;
+  color-scheme: light;
+  --brand-red: #B70F1E;
+  --brand-red-hover: #960c18;
+  --surface-muted: #f3f4f6;
+  --text-main: #303030;
 }
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body { margin: 0; min-width: 320px; font-family: var(--font-body); }
-a { text-decoration: none; }
-button, a { -webkit-tap-highlight-color: transparent; }
-button { font-family: inherit; }
-:focus-visible { outline: 3px solid var(--brand); outline-offset: 3px; }
 
-/* 03. NAVBAR: ACADEMIA TECNOLÓGICA --------------------------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; min-width: 320px; font-family: "Inter", sans-serif; }
+a { text-decoration: none; }
+button { font-family: inherit; }
+a, button { -webkit-tap-highlight-color: transparent; }
+:focus-visible { outline: 3px solid var(--brand-red); outline-offset: 3px; }
+
+/* 02. NAVBAR DE ESCRITORIO ---------------------------------- */
 .nav-shell {
   position: relative;
   z-index: 20;
@@ -50,15 +43,17 @@ button { font-family: inherit; }
   height: 96px;
   padding: 18px 32px;
 }
+
 .desktop-nav {
   display: flex;
   align-items: center;
   gap: 6px;
   padding: 7px;
-  background: var(--nav-surface);
-  border: 1px solid var(--nav-border);
+  background: var(--surface-muted);
+  border: 1px solid #e5e7eb;
   border-radius: 16px;
 }
+
 .nav-pill {
   display: inline-flex;
   align-items: center;
@@ -70,37 +65,23 @@ button { font-family: inherit; }
   border: 1px solid transparent;
   border-radius: 11px;
   box-shadow: none;
-  font-family: var(--font-body);
   font-size: 14px;
   font-weight: 600;
   letter-spacing: -.02em;
   white-space: nowrap;
   transition: background-color .2s ease, color .2s ease, transform .2s ease;
 }
+
 .nav-pill:first-child {
-  padding: 12px 24px;
-  background: var(--brand);
+  padding-inline: 24px;
+  background: var(--brand-red);
   color: #fff;
 }
-.mobile-brand, .mobile-trigger, .drawer-overlay, .mobile-drawer { display: none; }
 
-/* Control de modo oscuro, colocado junto al Navbar */
-.theme-control { position: absolute; top: 27px; right: 32px; z-index: 21; }
-.theme-toggle {
-  display: grid;
-  place-items: center;
-  width: 43px;
-  height: 43px;
-  background: var(--nav-surface);
-  color: var(--text);
-  border: 1px solid var(--nav-border);
-  border-radius: 12px;
-  font-size: 20px;
-  cursor: pointer;
-  transition: background-color .2s ease, color .2s ease;
-}
+.mobile-brand, .mobile-trigger { display: none; }
+.drawer-overlay, .mobile-drawer { display: none; }
 
-/* 04. HERO --------------------------------------------------- */
+/* 03. HERO -------------------------------------------------- */
 .hero {
   display: grid;
   grid-template-columns: 1.24fr 1fr;
@@ -111,6 +92,7 @@ button { font-family: inherit; }
   margin: 0 auto;
   padding: 30px 38px 90px;
 }
+
 .hero-copy { min-width: 0; }
 .eyebrow {
   display: inline-flex;
@@ -126,12 +108,12 @@ button { font-family: inherit; }
   flex-shrink: 0;
   width: 8px;
   height: 8px;
-  background: #ec2833;
   border-radius: 50%;
+  background: #ec2833;
 }
 .hero h1 {
   margin: 0 0 21px;
-  font-family: var(--font-heading);
+  font-family: "Poppins", sans-serif;
   font-size: clamp(65px, 8vw, 126px);
   font-weight: 800;
   letter-spacing: -.055em;
@@ -141,7 +123,6 @@ button { font-family: inherit; }
 .hero p {
   max-width: 600px;
   margin: 0;
-  font-family: var(--font-body);
   font-size: clamp(14px, 1.5vw, 18px);
   font-weight: 400;
   letter-spacing: -.01em;
@@ -158,8 +139,8 @@ button { font-family: inherit; }
   border-radius: 49px;
 }
 
-/* 05. LATIDO Y ELECTROCARDIOGRAMA ---------------------------- */
-.heart-svg { width: 80%; height: 82%; overflow: visible; }
+/* 04. CORAZÓN Y ELECTROCARDIOGRAMA -------------------------- */
+.heart-svg { display: block; width: 80%; height: 82%; overflow: visible; }
 .heart-beat {
   transform-origin: 50% 50%;
   transform-box: view-box;
@@ -182,10 +163,13 @@ button { font-family: inherit; }
   70%, 85% { stroke-dashoffset: 0; opacity: 1; }
   100% { stroke-dashoffset: -420; opacity: .4; }
 }
-@keyframes softpulse { 50% { transform: scale(1.055); } }
 
-/* 06. PRESENTACIÓN DE CURSOS Y BENEFICIOS -------------------- */
-.courses-section { padding: 100px 32px; background: #303030; color: #fff; }
+/* 05. SECCIÓN CURSOS ---------------------------------------- */
+.courses-section {
+  padding: 100px 32px;
+  background: #303030;
+  color: #fff;
+}
 .courses-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -194,31 +178,31 @@ button { font-family: inherit; }
   max-width: 1180px;
   margin: 0 auto;
 }
+
+/* El destino del corazón es el centro geométrico del recuadro.
+   La etiqueta inferior no participa en ese cálculo. */
 .courses-visual {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 28px;
+  display: grid;
+  place-items: center;
+  width: 100%;
   min-height: 370px;
-  border: 2px solid var(--brand);
+  border: 2px solid var(--brand-red);
   border-radius: 38px;
 }
-/* Marcador de destino: su centro se usa desde FlyingHeart.jsx */
 .courses-heart-target {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 250px;
-  height: 250px;
+  width: 240px;
+  height: 240px;
   margin: 0;
   transform: translate(-50%, -50%);
   pointer-events: none;
 }
 .courses-visual-label {
   position: absolute;
-  bottom: 32px;
+  bottom: 30px;
   left: 0;
   width: 100%;
   padding: 0 16px;
@@ -227,8 +211,10 @@ button { font-family: inherit; }
   letter-spacing: 2px;
   text-align: center;
 }
-/* Se conserva por compatibilidad si aún existe el icono anterior */
-.courses-main-icon { font-size: clamp(100px, 13vw, 175px); color: var(--brand); }
+.courses-main-icon {
+  font-size: clamp(100px, 13vw, 175px);
+  color: var(--brand-red);
+}
 .courses-eyebrow {
   display: block;
   margin-bottom: 18px;
@@ -240,7 +226,7 @@ button { font-family: inherit; }
 .courses-content h2 {
   margin: 0 0 28px;
   color: #e12a39;
-  font-family: var(--font-heading);
+  font-family: "Poppins", sans-serif;
   font-size: clamp(32px, 4.2vw, 58px);
   font-weight: 800;
   line-height: 1.15;
@@ -253,6 +239,8 @@ button { font-family: inherit; }
   font-size: 16px;
   line-height: 1.85;
 }
+
+/* 06. TARJETAS INFORMATIVAS --------------------------------- */
 .courses-benefits {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -262,27 +250,29 @@ button { font-family: inherit; }
 }
 .benefit-card {
   padding: 30px;
-  background: #383838;
   border: 1px solid #555;
   border-radius: 18px;
+  background: #383838;
   transition: transform .2s ease, border-color .2s ease;
 }
 .benefit-icon { margin-bottom: 18px; color: #f05260; font-size: 28px; }
 .benefit-card h3 {
   margin: 0 0 12px;
-  font-family: var(--font-heading);
+  font-family: "Poppins", sans-serif;
   font-size: 18px;
   font-weight: 700;
 }
 .benefit-card p { margin: 0; color: #d1d5db; font-size: 14px; line-height: 1.7; }
 
 /* 07. CORAZÓN VIAJERO Y GORRO ------------------------------- */
-/* Posición y tamaño se calculan desde FlyingHeart.jsx */
+/* FlyingHeart.jsx coloca left/top en el centro de cada recuadro.
+   El transform compensa la mitad del tamaño del propio elemento. */
 .flying-heart {
   position: fixed;
   z-index: 25;
   aspect-ratio: 1;
   pointer-events: none;
+  transform: translate3d(-50%, -50%, 0);
   will-change: transform;
 }
 .flying-heart .heart-svg { display: block; width: 100%; height: 100%; }
@@ -296,7 +286,23 @@ button { font-family: inherit; }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* 08. DARK MODE ---------------------------------------------- */
+/* 08. BOTÓN PARA CAMBIAR TEMA ------------------------------- */
+.theme-control { position: absolute; top: 27px; right: 32px; z-index: 21; }
+.theme-toggle {
+  display: grid;
+  place-items: center;
+  width: 43px;
+  height: 43px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #f3f4f6;
+  color: #303030;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background-color .2s ease, color .2s ease;
+}
+
+/* 09. DARK MODE --------------------------------------------- */
 html.dark { color-scheme: dark; background: #0f172a; }
 html.dark body { background: #0f172a; color: #f8fafc; }
 html.dark .nav-shell { background: #0f172a; }
@@ -305,54 +311,71 @@ html.dark .nav-pill:not(:first-child) { color: #e2e8f0; }
 html.dark .hero { color: #f8fafc; }
 html.dark .hero-art { border-color: #94a3b8; }
 html.dark .mobile-brand { color: #f8fafc; }
-html.dark .theme-toggle { background: #1e293b; border-color: #334155; color: #f8fafc; }
+html.dark .theme-toggle {
+  background: #1e293b;
+  border-color: #334155;
+  color: #f8fafc;
+}
 html.dark .mobile-drawer { background: #172033; color: #f8fafc; }
 html.dark .mobile-drawer nav a:not(:first-child),
 html.dark .drawer-head button { background: #263449; color: #f8fafc; }
 html.dark .courses-section { background: #111827; }
 html.dark .benefit-card { background: #1e293b; border-color: #334155; }
 
-/* 09. HOVER: SOLO MOUSE -------------------------------------- */
+/* 10. HOVER EXCLUSIVO PARA MOUSE ---------------------------- */
 @media (hover: hover) and (pointer: fine) {
-  .nav-pill:hover { background: #e5e7eb; color: #111827; transform: none; box-shadow: none; }
-  .nav-pill:first-child:hover { background: var(--brand-hover); color: #fff; transform: translateY(-1px); }
-  .benefit-card:hover { transform: translateY(-5px); border-color: var(--brand); }
+  .nav-pill:hover { background: #e5e7eb; color: #111827; }
+  .nav-pill:first-child:hover {
+    background: var(--brand-red-hover);
+    color: #fff;
+    transform: translateY(-1px);
+  }
+  .benefit-card:hover { transform: translateY(-5px); border-color: var(--brand-red); }
   html.dark .nav-pill:not(:first-child):hover { background: #334155; color: #fff; }
 }
 
-/* 10. RESPONSIVE --------------------------------------------- */
+/* 11. TABLET Y CELULAR (hasta 1023px) ----------------------- */
 @media (max-width: 1023px) {
   .nav-shell { height: 76px; padding: 0 20px; justify-content: space-between; }
   .desktop-nav { display: none; }
   .mobile-brand {
     display: block;
-    font-family: var(--font-heading);
+    color: #303030;
+    font-family: "Poppins", sans-serif;
     font-size: 19px;
     font-weight: 700;
-    color: #303030;
   }
-  .mobile-brand span { color: var(--brand); }
+  .mobile-brand span { color: var(--brand-red); }
   .mobile-trigger {
     display: grid;
     place-items: center;
     flex-shrink: 0;
     width: 49px;
     height: 49px;
-    background: var(--brand);
-    color: #fff;
     border: 0;
     border-radius: 12px;
+    background: var(--brand-red);
+    color: #fff;
     font-size: 28px;
     cursor: pointer;
     animation: softpulse 2.5s ease-in-out infinite;
   }
-  .theme-control { top: 16px; right: 82px; }
-  .hero { grid-template-columns: 1fr; gap: 36px; min-height: unset; padding: 45px 24px 76px; }
-  .hero h1 { font-size: clamp(48px, 11vw, 86px); letter-spacing: -.055em; }
-  .hero p { max-width: 530px; font-size: 14px; }
-  .hero-art { width: min(100%, 440px); justify-self: center; border-radius: 36px; }
 
-  /* Fondo que aparece detrás del menú lateral */
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    min-height: unset;
+    padding: 45px 24px 76px;
+  }
+  .hero h1 { font-size: clamp(48px, 11vw, 86px); }
+  .hero p { max-width: 530px; font-size: 14px; }
+  .hero-art {
+    justify-self: center;
+    width: min(100%, 440px);
+    border-radius: 36px;
+  }
+
+  /* Fondo del drawer */
   .drawer-overlay {
     display: block;
     position: fixed;
@@ -364,6 +387,8 @@ html.dark .benefit-card { background: #1e293b; border-color: #334155; }
     transition: opacity .25s ease, visibility .25s ease;
   }
   .drawer-overlay.visible { opacity: 1; visibility: visible; }
+
+  /* Panel lateral */
   .mobile-drawer {
     display: block;
     position: fixed;
@@ -374,17 +399,17 @@ html.dark .benefit-card { background: #1e293b; border-color: #334155; }
     width: min(85vw, 330px);
     padding: 26px;
     background: #fff;
+    box-shadow: 10px 0 35px rgb(0 0 0 / 12%);
     transform: translate3d(-102%, 0, 0);
     transition: transform .3s ease;
-    box-shadow: 10px 0 35px rgb(0 0 0 / 12%);
   }
   .mobile-drawer.opened { transform: translate3d(0, 0, 0); }
   .drawer-head {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     margin-bottom: 32px;
-    font-family: var(--font-heading);
+    font-family: "Poppins", sans-serif;
     font-size: 26px;
     font-weight: 700;
   }
@@ -393,10 +418,10 @@ html.dark .benefit-card { background: #1e293b; border-color: #334155; }
     place-items: center;
     width: 44px;
     height: 44px;
-    background: #f3f4f6;
-    color: #303030;
     border: 0;
     border-radius: 10px;
+    background: #f3f4f6;
+    color: #303030;
     cursor: pointer;
   }
   .mobile-drawer nav { display: flex; flex-direction: column; gap: 12px; }
@@ -405,36 +430,45 @@ html.dark .benefit-card { background: #1e293b; border-color: #334155; }
     align-items: center;
     min-height: 50px;
     padding: 14px 16px;
+    border-radius: 11px;
     background: #f3f4f6;
     color: #374151;
-    border-radius: 11px;
-    font-family: var(--font-body);
     font-size: 14px;
     font-weight: 600;
   }
-  .mobile-drawer nav a:first-child { background: var(--brand); color: #fff; }
+  .mobile-drawer nav a:first-child { background: var(--brand-red); color: #fff; }
 
+  .theme-control { top: 16px; right: 82px; }
   .courses-container { grid-template-columns: 1fr; gap: 42px; }
-  .courses-visual { width: 100%; max-width: 500px; min-height: 290px; margin: 0 auto; }
+  .courses-visual { width: 100%; max-width: 500px; min-height: 320px; margin: 0 auto; }
+  .courses-heart-target { width: 210px; height: 210px; }
   .courses-benefits { grid-template-columns: 1fr; max-width: 600px; }
 }
+
+/* 12. CELULAR (hasta 640px) --------------------------------- */
 @media (max-width: 640px) {
   .courses-section { padding: 70px 22px; }
   .courses-content h2 { font-size: clamp(30px, 8vw, 42px); }
   .courses-description { font-size: 15px; line-height: 1.75; }
   .courses-visual { min-height: 280px; border-radius: 26px; }
-  .courses-heart-target { width: 190px; height: 190px; }
-  .courses-visual-label { bottom: 22px; font-size: 10px; }
+  .courses-heart-target { width: 175px; height: 175px; }
+  .courses-visual-label { bottom: 20px; font-size: 10px; }
   .courses-benefits { margin-top: 45px; }
   .benefit-card { padding: 24px; }
 }
+
+/* 13. CELULARES PEQUEÑOS ------------------------------------ */
 @media (max-width: 380px) {
   .hero h1 { font-size: 12vw; }
   .mobile-brand { font-size: 16px; }
 }
 
-/* 11. ACCESIBILIDAD: REDUCIR MOVIMIENTO ---------------------- */
+/* 14. ACCESIBILIDAD Y MOVIMIENTO REDUCIDO ------------------- */
+@keyframes softpulse { 50% { transform: scale(1.055); } }
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { animation: none !important; transition: none !important; }
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
   .ecg-line { stroke-dasharray: none; stroke-dashoffset: 0; opacity: 1; }
 }

@@ -1,0 +1,49 @@
+
+# ==========================================
+# MEDICINA SIN FILTROS - GITIGNORE
+# ==========================================
+
+# Dependencias
+node_modules/
+
+# Compilación de Vite
+dist/
+dist-ssr/
+
+# Variables de entorno privadas
+.env
+.env.local
+.env.*.local
+.env.production
+.env.development
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# Archivos temporales
+.cache/
+.temp/
+tmp/
+temp/
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editores
+.vscode/*
+!.vscode/extensions.json
+.idea/
+
+# Archivos de respaldo
+*.bak
+*.backup
+*.swp
+*.swo
+
+# Archivos de testing
+coverage/
