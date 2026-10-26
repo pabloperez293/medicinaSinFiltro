@@ -11,7 +11,7 @@ const WHATSAPP_URL =
 const INSTAGRAM_URL =
   "https://www.instagram.com/medicinasinfiltros.clases.19/";
 
-// Reemplazar cuando el cliente confirme su canal.
+// Canal oficial proporcionado por el cliente.
 const YOUTUBE_URL = "https://www.youtube.com/@medicinasinfiltrosoficial6282";
 
 function InstagramIcon() {

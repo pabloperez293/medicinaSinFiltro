@@ -79,9 +79,11 @@ export default function CourseCatalog() {
                 </button>
                 <div
                   id={panelId}
-                  className="course-card__panel"
-                  hidden={!isOpen}
+                  className={`course-card__reveal${isOpen ? " is-open" : ""}`}
+                  inert={!isOpen}
+                  aria-hidden={!isOpen}
                 >
+                  <div className="course-card__panel">
                   <p>{course.detail}</p>
                   <a
                     href={getWhatsAppUrl(course)}
@@ -91,6 +93,7 @@ export default function CourseCatalog() {
                   >
                     Consultar por WhatsApp <span aria-hidden="true">↗</span>
                   </a>
+                  </div>
                 </div>
               </article>
             );

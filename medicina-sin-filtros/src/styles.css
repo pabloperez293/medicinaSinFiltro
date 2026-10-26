@@ -2058,8 +2058,7 @@ html.dark .site-footer {
 .course-heart__right {
   transform-box: fill-box;
   transform-origin: center;
-  transition:
-    transform 0.45s cubic-bezier(.2,.8,.2,1);
+  transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 /* Corazón entero: latido */
@@ -2078,7 +2077,8 @@ html.dark .site-footer {
 
 /* Animación de latido */
 @keyframes course-heartbeat {
-  0%, 100% {
+  0%,
+  100% {
     transform: scale(1);
   }
 
@@ -2107,6 +2107,49 @@ html.dark .site-footer {
 
   .course-heart__left,
   .course-heart__right {
+    transition: none;
+  }
+}
+
+/* ============================================
+   FASE 8 - Ajustes finales, sin alterar el diseño
+============================================ */
+.hero {
+  background-color: #ffffff;
+}
+html.dark .hero {
+  background-color: #171717;
+}
+.class-gallery__header h2 span {
+  color: #f2a5ad;
+}
+.course-card__reveal {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition:
+    grid-template-rows 0.38s cubic-bezier(0.2, 0.8, 0.2, 1),
+    opacity 0.25s ease;
+}
+.course-card__reveal.is-open {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+.course-card__panel {
+  min-height: 0;
+  overflow: hidden;
+}
+.course-card__trigger:hover .course-heart {
+  filter: drop-shadow(0 0 7px rgba(183, 15, 30, 0.32));
+}
+.course-card__trigger:focus-visible {
+  border-radius: 18px;
+}
+html.dark .course-catalog__header p {
+  color: #d1d5db;
+}
+@media (prefers-reduced-motion: reduce) {
+  .course-card__reveal {
     transition: none;
   }
 }

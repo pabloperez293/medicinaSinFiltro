@@ -1,7 +1,11 @@
 
-import React from "react";
+import React, { useId } from "react";
 
 export default function CourseHeart({ open = false }) {
+  const uniqueId = useId().replace(/:/g, "");
+  const leftId = `heart-left-${uniqueId}`;
+  const rightId = `heart-right-${uniqueId}`;
+
   return (
     <span
       className={`course-heart ${open ? "course-heart--broken" : ""}`}
@@ -13,11 +17,11 @@ export default function CourseHeart({ open = false }) {
         xmlns="http://www.w3.org/2000/svg"
       >
         <defs>
-          <clipPath id="heart-left-clip">
+          <clipPath id={leftId}>
             <path d="M0 0H32L27 23L34 33L27 43L32 64H0Z" />
           </clipPath>
 
-          <clipPath id="heart-right-clip">
+          <clipPath id={rightId}>
             <path d="M32 0H64V64H32L27 43L34 33L27 23Z" />
           </clipPath>
         </defs>
@@ -32,7 +36,7 @@ export default function CourseHeart({ open = false }) {
                C49 9 56 14 56 23
                C56 38 39 49 32 55Z"
             fill="#B70F1E"
-            clipPath="url(#heart-left-clip)"
+            clipPath={`url(#${leftId})`}
           />
         </g>
 
@@ -46,7 +50,7 @@ export default function CourseHeart({ open = false }) {
                C49 9 56 14 56 23
                C56 38 39 49 32 55Z"
             fill="#E34B5A"
-            clipPath="url(#heart-right-clip)"
+            clipPath={`url(#${rightId})`}
           />
         </g>
       </svg>
